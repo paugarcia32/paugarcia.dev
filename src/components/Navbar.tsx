@@ -8,7 +8,7 @@ export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="mx-auto w-full flex flex-col">
+    <nav className="mx-auto w-full flex flex-col max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-4xl">
       <div className="flex justify-between items-center p-4">
         {/* Mobile Navbar layout */}
         <div className="sm:hidden w-full flex justify-between items-center">
@@ -61,15 +61,19 @@ export const Navbar = () => {
         </div>
 
         {/* PC Layout */}
-        <div className="hidden sm:flex sm:items-center sm:space-x-6">
-          <Link href="/" legacyBehavior passHref>
-            <a className="text-lg font-semibold">Pau Garcia</a>
-          </Link>
-          <Link href="/projects">Projects</Link>
-          <Link href="/blog">Blog</Link>
-          <Link href="/contact">Contact Me</Link>
-          <Link href="/about">More about me</Link>
-          <ThemeToggle />
+        <div className="hidden sm:flex sm:items-center sm:justify-between w-full">
+          <div className="flex">
+            <Link href="/" legacyBehavior passHref>
+              <a className="text-lg font-semibold">Pau Garcia</a>
+            </Link>
+          </div>
+          <div className="flex items-center space-x-6">
+            <Link href="/projects">Projects</Link>
+            <Link href="/blog">Blog</Link>
+            <Link href="/contact">Contact Me</Link>
+            <Link href="/about">More about me</Link>
+            <ThemeToggle />
+          </div>
         </div>
       </div>
 
