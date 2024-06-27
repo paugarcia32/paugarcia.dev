@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { PostMetadata } from '@/components/PostMetadata';
 import { PostCard } from '@/components/cards';
-import { TagIcon } from 'lucide-react';
+import { Hash  } from 'lucide-react';
 import { Input } from "@/components/ui/input";
 import {
   Select,
@@ -63,7 +63,7 @@ const PostContent: React.FC<PostContentProps> = ({ posts }) => {
               onValueChange={handleTagChange}
             >
               <SelectTrigger className="max-w-xl">
-                <TagIcon className="text-2xl pointer-events-none flex-shrink-0 text-primary" />
+                <Hash  className="text-2xl pointer-events-none flex-shrink-0 text-primary" />
                 <SelectValue placeholder="Filter by Tag" />
               </SelectTrigger>
               <SelectContent>
