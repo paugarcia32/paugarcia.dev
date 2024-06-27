@@ -6,39 +6,25 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+
 import { ChevronRight } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Divider } from "@/components/Divider";
+import {
+  GithubCard,
+  InfoCard,
+  InfoList,
+  LinkedInCard,
+  MeCard,
+} from "@/components/contact-cards";
 
 export default function Home() {
   return (
     <main className="flex flex-col">
-      <Card className="mx-auto w-full items-center my-4">
-        <CardContent className="bg-secondary flex justify-center items-center p-4">
-          <p className="text-center">
-            Hi! I'm a network engineer graduate from Barcelona!
-          </p>
-        </CardContent>
-      </Card>
-
-      <Card className="flex items-center justify-center p-4 border-none">
-        <CardHeader>
-          <CardTitle>Pau Garcia</CardTitle>
-          <CardDescription>
-            Cybersecurity, IoT and Developer enthusiast
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="py-4">
-          <Avatar className="w-24 h-24">
-            <AvatarImage src="https://avatars.githubusercontent.com/u/37461446?v=4" />
-            <AvatarFallback>CN</AvatarFallback>
-          </Avatar>
-        </CardContent>
-      </Card>
-
-      <div className="p-4 ">
+      <InfoCard />
+      <MeCard />
+      <div className="p-4 mb-12 w-full">
         <h2 className="text-2xl font-bold mt-7.5 mb-2.5 font-title">Work</h2>
         <Divider />
         <p className="text-justify indent-4 hyphens-auto">
@@ -57,7 +43,7 @@ export default function Home() {
           rhoncus. Cras vestibulum vestibulum nisi, nec egestas justo molestie
           id. Praesent et commodo nunc.
         </p>
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center mt-8">
           <Button className="flex items-center">
             My portfolio
             <ChevronRight className="m-2 h-4 w-4" />
@@ -65,9 +51,29 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="p-4">
+      <div className="p-4 mb-12 w-full ">
         <h2 className="text-2xl font-bold mt-7.5 mb-2.5 font-title">Bio</h2>
         <Divider />
+        <div className="">
+          <div className="">
+            <span className="mr-4 font-bold">2002</span>
+            Born in Barcelona, Spain
+          </div>
+          <div className="">
+            <span className="mr-4 font-bold">2024</span>
+            Complete a university degree in Network Engineering
+          </div>
+        </div>
+      </div>
+
+      <div className="p-4 mb-12 w-full ">
+        <h2 className="text-2xl font-bold mt-7.5 mb-2.5 font-title">
+          On the web
+        </h2>
+        <Divider />
+        <div className="">
+          <InfoList />
+        </div>
       </div>
     </main>
   );
