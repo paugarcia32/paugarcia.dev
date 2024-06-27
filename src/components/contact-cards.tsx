@@ -11,6 +11,7 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Linkedin, Github } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 
 export const InfoCard: React.FC = () => {
   return (
@@ -119,5 +120,49 @@ export const InfoList: React.FC = () => {
         </a>
       </li>
     </ul>
+  );
+};
+
+interface ProjectCardProps {
+  name: string;
+  description: string;
+  technologies: string[];
+  image: string;
+  url: string; // Asegúrate de que url esté aquí
+}
+
+export const ProjectCard: React.FC<ProjectCardProps> = ({
+  name,
+  description,
+  technologies,
+  image,
+  url,
+}) => {
+  return (
+    <a href={url} target="_blank" rel="noopener noreferrer" className="block">
+      <Card className="rounded-lg p-4 hover:bg-secondary">
+        <img
+          src={image}
+          alt={name}
+          className="w-full h-48 object-cover rounded-t-lg"
+        />
+        <CardHeader className="flex flex-col items-start space-y-2 mt-4">
+          <CardTitle className="text-lg font-semibold">{name}</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <CardDescription className="text-gray-600">
+            {description}
+          </CardDescription>
+          <div className="mt-4">
+            <h3 className="font-semibold">Technologies:</h3>
+            <div className="flex flex-wrap gap-2">
+              {technologies.map((tech, index) => (
+                <Badge key={index}>{tech}</Badge>
+              ))}
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+    </a>
   );
 };

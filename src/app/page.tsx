@@ -1,23 +1,7 @@
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-
 import { ChevronRight } from "lucide-react";
-
 import { Button } from "@/components/ui/button";
 import { Divider } from "@/components/Divider";
-import {
-  GithubCard,
-  InfoCard,
-  InfoList,
-  LinkedInCard,
-  MeCard,
-} from "@/components/contact-cards";
+import { InfoCard, InfoList, MeCard } from "@/components/contact-cards";
 
 export default function Home() {
   return (
