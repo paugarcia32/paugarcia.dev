@@ -1,26 +1,16 @@
-'use client';
-
 import React, { useState } from 'react';
 import { PostMetadata } from '@/components/PostMetadata';
 import { PostCard } from '@/components/cards';
-import { SearchIcon, TagIcon } from 'lucide-react';
-import { Input } from "@/components/ui/input"
+import { TagIcon } from 'lucide-react';
+import { Input } from "@/components/ui/input";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
-import {
-  Pagination,
-  PaginationContent,
-  PaginationEllipsis,
-  PaginationItem,
-  PaginationLink,
-  PaginationNext,
-  PaginationPrevious,
-} from "@/components/ui/pagination"
+} from "@/components/ui/select";
+import PaginationSection from '@/components/PaginationSection';
 
 interface PostContentProps {
   posts: PostMetadata[];
@@ -60,7 +50,6 @@ const PostContent: React.FC<PostContentProps> = ({ posts }) => {
       <div className='flex justify-center'>
         <Input
           className='mb-4 max-w-xl mx-8'
-          color='default'
           type="text"
           placeholder="Search Posts ..."
           onChange={(e) => setSearchTerm(e.target.value)}
@@ -105,92 +94,6 @@ const PostContent: React.FC<PostContentProps> = ({ posts }) => {
       </div>
     </div>
   );
-}
+};
 
 export default PostContent;
-
-function PaginationSection({
-  totalPosts,
-  postsPerPage,
-  currentPage,
-  setCurrentPage,
-}: {
-  totalPosts: number;
-  postsPerPage: number;
-  currentPage: number;
-  setCurrentPage: (page: number) => void;
-}) {
-  const pageNumbers = [];
-  for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
-    pageNumbers.push(i);
-  }
-
-  const maxPageNum = 5; // Maximum page numbers to display at once
-  const pageNumLimit = Math.floor(maxPageNum / 2); // Current page should be in the middle if possible
-
-  let activePages = pageNumbers.slice(
-    Math.max(0, currentPage - 1 - pageNumLimit),
-    Math.min(currentPage - 1 + pageNumLimit + 1, pageNumbers.length)
-  );
-
-  const handleNextPage = () => {
-    if (currentPage < pageNumbers.length) {
-      setCurrentPage(currentPage + 1);
-    }
-  };
-
-  const handlePrevPage = () => {
-    if (currentPage > 1) {
-      setCurrentPage(currentPage - 1);
-    }
-  };
-
-  const renderPages = () => {
-    const renderedPages = activePages.map((page) => (
-      <PaginationItem
-        key={page}
-        className={currentPage === page ? "bg-neutral-100 rounded-md" : ""}
-      >
-        <PaginationLink onClick={() => setCurrentPage(page)}>
-          {page}
-        </PaginationLink>
-      </PaginationItem>
-    ));
-
-    if (activePages[0] > 1) {
-      renderedPages.unshift(
-        <PaginationEllipsis
-          key="ellipsis-start"
-          onClick={() => setCurrentPage(activePages[0] - 1)}
-        />
-      );
-    }
-
-    if (activePages[activePages.length - 1] < pageNumbers.length) {
-      renderedPages.push(
-        <PaginationEllipsis
-          key="ellipsis-end"
-          onClick={() => setCurrentPage(activePages[activePages.length - 1] + 1)}
-        />
-      );
-    }
-
-    return renderedPages;
-  };
-
-  return (
-    <Pagination>
-      <PaginationContent>
-        <PaginationItem>
-          <PaginationPrevious onClick={handlePrevPage} />
-        </PaginationItem>
-
-        {renderPages()}
-
-        <PaginationItem>
-          <PaginationNext onClick={handleNextPage} />
-        </PaginationItem>
-      </PaginationContent>
-    </Pagination>
-  );
-}
