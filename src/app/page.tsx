@@ -5,7 +5,7 @@ import { InfoCard, InfoList, MeCard } from "@/components/cards";
 
 export default function Home() {
   return (
-    <main className="flex flex-col">
+    <main className="flex flex-col max-w-lg sm:max-w-xl mx-auto">
       <InfoCard />
       <MeCard />
       <div className="p-4 mb-12 w-full">

@@ -11,7 +11,7 @@ import { PostCard } from "@/components/cards";
 import { Badge } from "@/components/ui/badge";
 
 const getPostContent = (slug: string) => {
-  const folder = "/posts/";
+  const folder = "posts/";
   const file = `${folder}${slug}.md`;
   const content = fs.readFileSync(file, "utf8");
   const matterResult = matter(content);
@@ -57,17 +57,19 @@ const PostPage = (props: any) => {
   const relatedPosts = getRelatedPosts(post.data.tags, slug);
 
   return (
-    <div className="w-screen max-w-sm md:max-w-6xl m-0 mx-auto leading-relaxed p-2.5 md:p-10 lg:p-20">
+    <div className="w-full">
       <div className="">
+
         <div className="my-6 text-center items-center">
           <h1 className="text-2xl font-title mb-4">{post.data.title}</h1>
           <div className="max-w-md mx-auto text-center">
             <p className="text-slate-300 mt-2 text-sm">{post.data.subtitle}</p>
             <p className="text-slate-300 mt-2 text-sm">{post.data.date}</p>
           </div>
-
         </div>
+
         <div className="md:flex md:mt-10">
+
           <div className="md:w-1/4">
             <div className="md:sticky md:top-12">
               <div className="flex justify-start items-center gap-2 flex-wrap mb-4">
