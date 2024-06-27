@@ -1,7 +1,7 @@
 import { ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Divider } from "@/components/Divider";
-import { InfoCard, InfoList, MeCard } from "@/components/contact-cards";
+import { InfoCard, InfoList, MeCard } from "@/components/cards";
 
 export default function Home() {
   return (

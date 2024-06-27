@@ -24,6 +24,58 @@ export const GithubIcon: React.FC<IconSvgProps> = ({
   );
 };
 
+export const SearchIcon = (props: IconSvgProps) => (
+	<svg
+		aria-hidden="true"
+		fill="none"
+		focusable="false"
+		height="1em"
+		role="presentation"
+		viewBox="0 0 24 24"
+		width="1em"
+		{...props}
+	>
+		<path
+			d="M11.5 21C16.7467 21 21 16.7467 21 11.5C21 6.25329 16.7467 2 11.5 2C6.25329 2 2 6.25329 2 11.5C2 16.7467 6.25329 21 11.5 21Z"
+			stroke="currentColor"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="2"
+		/>
+		<path
+			d="M22 22L20 20"
+			stroke="currentColor"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="2"
+		/>
+	</svg>
+);
+
+export const TOCIcon: React.FC<IconSvgProps> = ({
+	size = 24,
+	width,
+	height,
+	...props
+}) => {
+	return (
+		<svg
+		xmlns="http://www.w3.org/2000/svg"
+		width="24"
+		height="24"
+		viewBox="0 0 24 24"
+		fill="none"
+		stroke="currentColor"
+		// stroke="primary"
+		strokeWidth="2"
+		strokeLinecap="round"
+		strokeLinejoin="round"
+		>
+			<line x1="8" x2="21" y1="6" y2="6"/><line x1="8" x2="21" y1="12" y2="12"/><line x1="8" x2="21" y1="18" y2="18"/><line x1="3" x2="3.01" y1="6" y2="6"/><line x1="3" x2="3.01" y1="12" y2="12"/><line x1="3" x2="3.01" y1="18" y2="18"/>
+			</svg>
+	);
+};
+
 export const MailIcon: React.FC<IconSvgProps> = ({
   size = 24,
   width,

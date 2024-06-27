@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+/* eslint-disable react/no-unescaped-entities */
 import React from "react";
 import { LinkedInIcon, GithubIcon } from "./icons";
 import {
@@ -13,6 +15,9 @@ import { Button } from "@/components/ui/button";
 import { Linkedin, Github } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
+import Link from "next/link";
+import { PostMetadata } from "./PostMetadata";
+
 export const InfoCard: React.FC = () => {
   return (
     <Card className="mx-auto w-full items-center my-4">
@@ -27,7 +32,7 @@ export const InfoCard: React.FC = () => {
 
 export const MeCard: React.FC = () => {
   return (
-    <Card className="flex items-center justify-center p-4 border-none">
+    <Card className="flex items-center justify-center p-4 border-none shadow-none">
       <CardHeader>
         <CardTitle>Pau Garcia</CardTitle>
         <CardDescription>
@@ -154,7 +159,6 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             {description}
           </CardDescription>
           <div className="mt-4">
-            <h3 className="font-semibold">Technologies:</h3>
             <div className="flex flex-wrap gap-2">
               {technologies.map((tech, index) => (
                 <Badge key={index}>{tech}</Badge>
@@ -166,3 +170,38 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
     </a>
   );
 };
+
+
+
+export const PostCard = (props: PostMetadata) => {
+  return (
+    <Card className="bg-secondary-50 dark:bg-secondary mx-10 md:mx-0 border-none shadow-none">
+        <CardHeader>
+          <img
+          src={`/${props.banner}`}
+          alt={props.title}
+          className="w-full h-48 object-cover rounded-t-lg"
+        />
+        </CardHeader>
+        <CardContent>
+          <div className="flex justify-between items-start">
+              <div className="flex flex-col gap-0">
+                 <div className="flex justify-start items-center gap-2 flex-wrap">
+                   {props.tags.map((tag, index) => (
+                   <Badge key={index} className="bg-accent-50 border border-accent-400 dark:bg-accent-950 dark:border-accent-600" ><p className="font-semibold">{tag}</p></Badge>
+                 ))}
+                 </div>
+                   <Link href={`/posts/${props.slug}`}>
+                     <h1 className="text-accent hover:underline font-title mb-2">{props.title}</h1>
+                   </Link>
+               </div>
+             </div>
+             <div className="flex flex-col mt-2 gap-1">
+               <p className="text-slate-400">{props.subtitle}</p>
+             </div>
+        </CardContent>
+        <CardFooter>
+          <p className="text-default-500">{props.date}</p>
+        </CardFooter>
+    </Card>
+  )}

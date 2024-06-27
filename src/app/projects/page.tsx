@@ -1,5 +1,5 @@
 import { Divider } from "@/components/Divider";
-import { ProjectCard } from "@/components/contact-cards";
+import { ProjectCard } from "@/components/cards";
 
 interface Project {
   name: string;
