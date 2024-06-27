@@ -14,6 +14,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Linkedin, Github } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { FiMail, FiGithub, FiLinkedin } from "react-icons/fi";
 
 import Link from "next/link";
 import { PostMetadata } from "./PostMetadata";
@@ -205,3 +206,36 @@ export const PostCard = (props: PostMetadata) => {
         </CardFooter>
     </Card>
   )}
+
+  interface ContactCardProps {
+  icon: React.ReactNode;
+  site: string;
+  username: string;
+  link?: string;
+}
+
+export const ContactCard: React.FC<ContactCardProps> = ({ icon, site, username, link }) => {
+  const CardContentElement = (
+    <Card className="border-none bg-background/60 dark:bg-default-100/50 mx-20 md:mx-5">
+      <CardContent>
+        <div className="flex items-center justify-center">
+          <div className="text-primary mx-2">{icon}</div>
+          <div className="flex flex-col">
+            <div className="flex flex-col gap-0 ml-1">
+              <h1 className="text-large font-medium mt-1">{site}</h1>
+              <p className="text-small text-foreground/80 mb-1">{username}</p>
+            </div>
+          </div>
+        </div>
+      </CardContent>
+    </Card>
+  );
+
+  return link ? (
+    <a href={link} target="_blank" rel="noopener noreferrer">
+      {CardContentElement}
+    </a>
+  ) : (
+    CardContentElement
+  );
+};
