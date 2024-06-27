@@ -1,6 +1,5 @@
 'use client';
 
-// import fs from 'fs';
 import React, { useState, ChangeEventHandler } from 'react';
 import { PostMetadata } from '@/components/PostMetadata';
 import { PostCard } from '@/components/cards';
@@ -54,14 +53,6 @@ const PostContent: React.FC<PostContentProps> = ({ posts }) => {
   const indexOfFirstPost = indexOfLastPost - PAGE_SIZE;
   const currentPosts = filteredPosts.slice(indexOfFirstPost, indexOfLastPost);
   const totalPages = Math.ceil(filteredPosts.length / PAGE_SIZE);
-
-
-
-
-
-
-
-
 
   return (
     <div className='max-w-6xl'>
@@ -120,12 +111,5 @@ const PostContent: React.FC<PostContentProps> = ({ posts }) => {
     </div>
   )
 }
-
-
-
-
-
-
-
 
 export default PostContent;
