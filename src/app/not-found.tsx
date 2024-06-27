@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 const NotFoundPage: React.FC = () => {
   return (
-    <main className="flex flex-col items-center justify-center min-h-full">
+    <main className="flex flex-col items-center justify-center max-h-screen min-h-[1000]">
       <h1 className="text-4xl font-bold mb-8">404 - Not Found</h1>
       <p className="text-lg mb-8">The page you're looking for doesn't exist.</p>
       <div className="flex gap-4">

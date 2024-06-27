@@ -1,8 +1,11 @@
+// RootLayout.tsx
+
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { ThemeProvider } from "@/components/theme-provider";
+import Footer from "@/components/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,8 +20,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${inter.className} `}>
+    <html lang="en" style={{ height: "100%" }}>
+      <body className={`${inter.className} flex flex-col min-h-screen`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -26,8 +29,9 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Navbar />
-          <div className="max-w-lg sm:max-w-3xl mx-auto pt-20">{children}</div>
+          <div className="flex-1 max-w-lg sm:max-w-3xl mx-auto pt-20">{children}</div>
         </ThemeProvider>
+        <Footer />
       </body>
     </html>
   );

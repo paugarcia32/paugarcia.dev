@@ -102,7 +102,7 @@ const PostPage = (props: any) => {
               <DownloadButton slug={slug} />
             </div>
           </div>
-          <div className="m-0 mx-auto leading-relaxed px-1.5 md:px-10 lg:px-20">
+          <div className="m-0 pb-4 mx-auto leading-relaxed px-1.5 md:px-10 lg:px-20">
             {relatedPosts.length > 0 && <RelatedPostsSection relatedPosts={relatedPosts} />}
           </div>
       </div>
