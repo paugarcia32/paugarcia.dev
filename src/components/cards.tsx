@@ -34,8 +34,8 @@ export const MeCard: React.FC = () => {
   return (
     <Card className="flex items-center justify-center p-4 border-none shadow-none">
       <CardHeader>
-        <CardTitle>Pau Garcia</CardTitle>
-        <CardDescription>
+        <CardTitle className="text-4xl font-bold">Pau Garcia</CardTitle>
+        <CardDescription className="text-sm">
           Cybersecurity, IoT and Developer enthusiast
         </CardDescription>
       </CardHeader>
@@ -44,6 +44,25 @@ export const MeCard: React.FC = () => {
           <AvatarImage src="https://avatars.githubusercontent.com/u/37461446?v=4" />
           <AvatarFallback>CN</AvatarFallback>
         </Avatar>
+      </CardContent>
+    </Card>
+  );
+};
+
+export const PersonalCard: React.FC = () => {
+  return (
+    <Card className="flex flex-col  justify-center p-4 border-none shadow-none">
+      <CardHeader>
+        <Avatar className="w-48 h-48">
+          <AvatarImage src="https://avatars.githubusercontent.com/u/37461446?v=4" />
+          <AvatarFallback>CN</AvatarFallback>
+        </Avatar>
+      </CardHeader>
+      <CardContent className="py-4">
+        <CardTitle className="text-4xl font-bold">Pau Garcia</CardTitle>
+        <CardDescription className="text-sm">
+          Cybersecurity, IoT and Developer enthusiast
+        </CardDescription>
       </CardContent>
     </Card>
   );

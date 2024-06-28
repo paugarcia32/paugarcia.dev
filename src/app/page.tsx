@@ -1,14 +1,14 @@
 import { ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Divider } from "@/components/Divider";
-import { InfoCard, InfoList, MeCard } from "@/components/cards";
+import { InfoCard, InfoList, MeCard, PersonalCard } from "@/components/cards";
 import { Heading2 } from "@/components/Headings";
 
 export default function Home() {
   return (
     <main className="flex flex-col max-w-lg sm:max-w-xl p-4">
-      <InfoCard />
       <MeCard />
+      <InfoCard />
       <div className="p-4 mb-12 w-full">
         <Heading2>Work</Heading2>
         <Divider />
@@ -35,7 +35,6 @@ export default function Home() {
           </Button>
         </div>
       </div>
-
       <div className="p-4 mb-12 w-full ">
         <Heading2>Bio</Heading2>
         <Divider />
@@ -50,7 +49,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-
       <div className="p-4 mb-12 w-full ">
         <Heading2>On the web</Heading2>
         <Divider />
