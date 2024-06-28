@@ -14,14 +14,13 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Linkedin, Github } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import { FiMail, FiGithub, FiLinkedin } from "react-icons/fi";
-
 import Link from "next/link";
 import { PostMetadata } from "./PostMetadata";
-
+import ResponsiveImage from "@/components/ResponsiveImage";
+import { Heading3, Heading4 } from "./Headings";
 export const InfoCard: React.FC = () => {
   return (
-    <Card className="mx-auto w-full items-center my-4">
+    <Card className="w-full mx-auto my-4 p-2 border-none shadow-none">
       <CardContent className="bg-secondary flex justify-center items-center p-4">
         <p className="text-center">
           Hi! I'm a network engineer graduate from Barcelona!
@@ -172,49 +171,60 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   );
 };
 
-
-
 export const PostCard = (props: PostMetadata) => {
   return (
     <Card className="bg-secondary-50 dark:bg-secondary mx-10 md:mx-0 border-none shadow-none">
-        <CardHeader>
-          <img
+      <CardHeader>
+        <img
           src={`/${props.banner}`}
           alt={props.title}
           className="w-full h-48 object-cover rounded-t-lg"
         />
-        </CardHeader>
-        <CardContent>
-          <div className="flex justify-between items-start">
-              <div className="flex flex-col gap-0">
-                 <div className="flex justify-start items-center gap-2 flex-wrap">
-                   {props.tags.map((tag, index) => (
-                   <Badge key={index} className="bg-accent-50 border border-accent-400 dark:bg-accent-950 dark:border-accent-600" ><p className="font-semibold">{tag}</p></Badge>
-                 ))}
-                 </div>
-                   <Link href={`/posts/${props.slug}`}>
-                     <h1 className="text-accent hover:underline font-title mb-2">{props.title}</h1>
-                   </Link>
-               </div>
-             </div>
-             <div className="flex flex-col mt-2 gap-1">
-               <p className="text-slate-400">{props.subtitle}</p>
-             </div>
-        </CardContent>
-        <CardFooter>
-          <p className="text-default-500">{props.date}</p>
-        </CardFooter>
+      </CardHeader>
+      <CardContent>
+        <div className="flex justify-between items-start">
+          <div className="flex flex-col gap-0">
+            <div className="flex justify-start items-center gap-2 flex-wrap">
+              {props.tags.map((tag, index) => (
+                <Badge
+                  key={index}
+                  className="bg-accent-50 border border-accent-400 dark:bg-accent-950 dark:border-accent-600"
+                >
+                  <p className="font-semibold">{tag}</p>
+                </Badge>
+              ))}
+            </div>
+            <Link href={`/posts/${props.slug}`}>
+              <h1 className="text-accent hover:underline font-title mb-2">
+                {props.title}
+              </h1>
+            </Link>
+          </div>
+        </div>
+        <div className="flex flex-col mt-2 gap-1">
+          <p className="text-slate-400">{props.subtitle}</p>
+        </div>
+      </CardContent>
+      <CardFooter>
+        <p className="text-default-500">{props.date}</p>
+      </CardFooter>
     </Card>
-  )}
+  );
+};
 
-  interface ContactCardProps {
+interface ContactCardProps {
   icon: React.ReactNode;
   site: string;
   username: string;
   link?: string;
 }
 
-export const ContactCard: React.FC<ContactCardProps> = ({ icon, site, username, link }) => {
+export const ContactCard: React.FC<ContactCardProps> = ({
+  icon,
+  site,
+  username,
+  link,
+}) => {
   const CardContentElement = (
     <Card className="border-none bg-background/60 dark:bg-default-100/50 mx-20 md:mx-5">
       <CardContent>
@@ -237,5 +247,35 @@ export const ContactCard: React.FC<ContactCardProps> = ({ icon, site, username, 
     </a>
   ) : (
     CardContentElement
+  );
+};
+
+interface DotfileCardProps {
+  name: string;
+  lightImage: string;
+  darkImage: string;
+  url: string;
+}
+
+export const DotfileCard: React.FC<DotfileCardProps> = ({
+  name,
+  lightImage,
+  darkImage,
+  url,
+}) => {
+  return (
+    <a href={url} target="_blank" rel="noopener noreferrer" className="block">
+      <div className="flex flex-col items-center p-4">
+        <Card className="rounded-lg hover:bg-secondary mb-2">
+          <ResponsiveImage
+            lightSrc={lightImage}
+            darkSrc={darkImage}
+            alt={name}
+            className="w-full h-full object-cover rounded-lg"
+          />
+        </Card>
+        <Heading4>{name}</Heading4>
+      </div>
+    </a>
   );
 };
