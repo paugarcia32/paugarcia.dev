@@ -6,17 +6,18 @@ import { FiMail, FiGithub, FiLinkedin } from "react-icons/fi";
 
 const contactInfo = [
   {
-    icon: <FiMail />,
-    site: "Email",
-    username: "paugarcia32@gmail.com",
-    link: "mailto:paugarcia32@gmail.com",
-  },
-  {
     icon: <FiGithub />,
     site: "GitHub",
     username: "paugarcia32",
     link: "https://github.com/paugarcia32",
   },
+  {
+    icon: <FiMail />,
+    site: "Email",
+    username: "paugarcia32@gmail.com",
+    link: "mailto:paugarcia32@gmail.com",
+  },
+
   {
     icon: <FiLinkedin />,
     site: "LinkedIn",

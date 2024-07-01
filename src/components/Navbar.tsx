@@ -8,7 +8,7 @@ export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 w-full z-50 bg-white dark:bg-gray-900 ">
+    <nav className="fixed top-0 left-0 right-0 w-full z-50 bg-background dark:bg-background ">
       <div className="flex justify-between items-center px-4 py-2 max-w-4xl mx-auto">
         {/* Mobile Navbar layout */}
         <div className="sm:hidden w-full flex justify-between items-center">

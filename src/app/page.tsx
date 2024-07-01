@@ -17,13 +17,16 @@ export default function Home() {
           I'm a Network Engineering graduate currently working as a
           cybersecurity intern. I'm always eager to learn new things and work on
           side projects. You can find all my projects on the&nbsp;
-          <a href="/projects" className="text-secondary hover:underline">
+          <a
+            href="/projects"
+            className="text-accent hover:text-primary hover:underline"
+          >
             projects page&nbsp;
           </a>
           or on my&nbsp;
           <a
             href="https://github.com/paugarcia32"
-            className="text-secondary hover:underline"
+            className="text-accent hover:text-primary hover:underline"
           >
             GitHub
           </a>

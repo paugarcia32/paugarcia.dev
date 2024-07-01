@@ -21,8 +21,8 @@ import { Heading3, Heading4 } from "./Headings";
 
 export const InfoCard: React.FC = () => {
   return (
-    <Card className="w-full mx-auto my-4 border-none shadow-none">
-      <CardContent className="bg-secondary flex justify-center items-center p-4">
+    <Card className="w-full mx-auto my-4 border-none shadow-none bg-accent">
+      <CardContent className="flex justify-center items-center p-4">
         <p className="text-center">
           Hi! I'm a network engineer graduate from Barcelona!
         </p>
@@ -35,7 +35,7 @@ export const MeCard: React.FC = () => {
   return (
     <Card className="flex items-center justify-center p-4 border-none shadow-none">
       <CardHeader>
-        <CardTitle className="text-4xl font-bold">Pau Garcia</CardTitle>
+        <CardTitle className="text-4xl font-bold  ">Pau Garcia</CardTitle>
         <CardDescription className="text-sm">
           Developer, Cybersecurity & IoT enthusiast
         </CardDescription>
@@ -52,9 +52,11 @@ export const MeCard: React.FC = () => {
 
 export const PersonalCard: React.FC = () => {
   return (
-    <Card className="flex items-center justify-center p-4 border-none shadow-none">
+    <Card className="flex items-center justify-center p-4 border-none shadow-none bg-background">
       <CardHeader>
-        <CardTitle className="text-4xl font-bold">Pau Garcia</CardTitle>
+        <CardTitle className="text-4xl font-bold bg-gradient-to-r linearPrimaryAccent">
+          Pau Garcia
+        </CardTitle>
         <CardDescription className="text-md">
           Developer, Cybersecurity & IoT enthusiast
         </CardDescription>
@@ -165,7 +167,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
 }) => {
   return (
     <a href={url} target="_blank" rel="noopener noreferrer" className="block">
-      <Card className="rounded-lg hover:bg-secondary  max-h-[120]">
+      <Card className=" dark:bg-zinc-900 bg-zinc-300 hover:bg-zinc-400 dark:hover:bg-zinc-800 max-h-[120]">
         <img
           src={image}
           alt={name}
@@ -246,9 +248,9 @@ export const ContactCard: React.FC<ContactCardProps> = ({
   link,
 }) => {
   const CardContentElement = (
-    <Card className="border-none bg-background/60 dark:bg-default-100/50 mx-20 md:mx-5 hover:bg-secondary">
+    <Card className="dark:bg-zinc-900 bg-zinc-300 hover:bg-zinc-400 dark:hover:bg-accent mx-20 md:mx-2 mb-4  hover:bg-accent">
       <CardContent>
-        <div className="flex items-center justify-center">
+        <div className="flex items-center justify-start ">
           <div className="text-primary mx-2">{icon}</div>
           <div className="flex flex-col">
             <div className="flex flex-col gap-0 ml-1 mt-2">
