@@ -95,7 +95,7 @@ export const LinkedInCard: React.FC = () => {
 
 export const GithubCard: React.FC = () => {
   return (
-    <Card className="border-none rounded-lg p-4 hover:bg-secondary">
+    <Card className=" p-4 border-none rounded-lg">
       <CardHeader className="flex items-center space-x-2">
         <GithubIcon />
         <CardTitle className="text-lg font-semibold">GitHub</CardTitle>
@@ -195,45 +195,35 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
 
 export const PostCard = (props: PostMetadata) => {
   return (
-    <Card className="bg-secondary-50 dark:bg-secondary mx-10 md:mx-0 border-none shadow-none">
-      <CardHeader>
-        <img
-          src={`/${props.banner}`}
-          alt={props.title}
-          className="w-full h-48 object-cover rounded-t-lg"
-        />
-      </CardHeader>
-      <CardContent>
-        <div className="flex justify-between items-start">
-          <div className="flex flex-col gap-0">
-            <div className="flex justify-start items-center gap-2 flex-wrap">
-              {props.tags.map((tag, index) => (
-                <Badge
-                  key={index}
-                  className="bg-accent-50 border border-accent-400 dark:bg-accent-950 dark:border-accent-600"
-                >
-                  <p className="font-semibold">{tag}</p>
-                </Badge>
-              ))}
-            </div>
-            <Link href={`/posts/${props.slug}`}>
-              <h1 className="text-accent hover:underline font-title mb-2">
-                {props.title}
-              </h1>
-            </Link>
-          </div>
+    <Card className="dark:bg-zinc-900 bg-zinc-300 hover:bg-zinc-400 dark:hover:bg-zinc-800 max-h-[120] border-none shadow-none">
+      <img
+        src={`/${props.banner}`}
+        alt={props.title}
+        className="w-full h-48 object-cover rounded-t-lg"
+      />
+      <div className="p-4">
+        <div className="flex justify-start items-center gap-2 flex-wrap mb-2">
+          {props.tags.map((tag, index) => (
+            <Badge
+              key={index}
+              className="bg-accent border border-accent-400 dark:bg-accent-950 dark:border-accent-600"
+            >
+              <p className="font-semibold">{tag}</p>
+            </Badge>
+          ))}
         </div>
-        <div className="flex flex-col mt-2 gap-1">
-          <p className="text-slate-400">{props.subtitle}</p>
-        </div>
-      </CardContent>
-      <CardFooter>
+        <Link href={`/posts/${props.slug}`}>
+          <h2 className="text-accent hover:underline font-title text-lg mb-2">
+            {props.title}
+          </h2>
+        </Link>
+
+        <p className="text-slate-400 mb-2">{props.subtitle}</p>
         <p className="text-default-500">{props.date}</p>
-      </CardFooter>
+      </div>
     </Card>
   );
 };
-
 interface ContactCardProps {
   icon: React.ReactNode;
   site: string;

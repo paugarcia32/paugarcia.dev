@@ -43,9 +43,10 @@ const AboutPage: React.FC = () => {
         <Divider />
         <p className="indent-4 text-justify mb-4">
           As a tech enthusiast, I spend hours and hours at my computer every
-          day. That's why I'm continuously improving my workspace in order to
-          boost my productivity and feel comfortable on it. Feel free to pick
-          and adapt whatever you think it would be useful for your environments!
+          day. That&#39;s why I&#39;m continuously improving my workspace in
+          order to boost my productivity and feel comfortable on it. Feel free
+          to pick and adapt whatever you think it would be useful for your
+          environments!
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {dotfiles.map((dotfile, index) => (

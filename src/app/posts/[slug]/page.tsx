@@ -77,7 +77,7 @@ const PostPage = (props: any) => {
                   post.data.tags.map((tag: string, index: number) => (
                     <Badge
                       key={index}
-                      className="bg-accent-50 border border-accent-400 dark:bg-accent-950 dark:border-accent-600"
+                      className="bg-accent border border-accent-400 dark:bg-accent-950 dark:border-accent-600"
                     >
                       <h1 className="font-semibold">{tag}</h1>
                     </Badge>
@@ -113,4 +113,3 @@ const PostPage = (props: any) => {
 };
 
 export default PostPage;
-

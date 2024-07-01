@@ -19,7 +19,10 @@ const DownloadCVButton = () => {
   };
 
   return (
-    <Button className="flex items-center" onClick={handleDownloadClick}>
+    <Button
+      className="flex items-center justify-between"
+      onClick={handleDownloadClick}
+    >
       <DownloadIcon />
       Download CV
     </Button>

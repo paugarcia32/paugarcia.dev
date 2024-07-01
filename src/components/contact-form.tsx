@@ -4,10 +4,12 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import React, { useState } from "react";
 import { SendIcon } from "./icons";
+import { useToast } from "@/components/ui/use-toast"; // Asegúrate de que la ruta de importación sea correcta
 
 export default function ContactForm() {
   const [loading, setLoading] = useState(false);
   const [emailError, setEmailError] = useState(false);
+  const { toast } = useToast();
 
   async function handleSubmit(event: any) {
     event.preventDefault();
@@ -24,6 +26,9 @@ export default function ContactForm() {
     if (!emailPattern.test(data.email)) {
       setLoading(false);
       setEmailError(true);
+      toast({
+        description: "Please enter a valid email address.",
+      });
       return;
     } else {
       setEmailError(false);
@@ -41,6 +46,9 @@ export default function ContactForm() {
       if (response.ok) {
         console.log("Message sent successfully");
         setLoading(false);
+        toast({
+          description: "Your message has been sent.",
+        });
         // reset the form
         event.target.name.value = "";
         event.target.email.value = "";
@@ -49,10 +57,16 @@ export default function ContactForm() {
       } else {
         console.log("Error sending message");
         setLoading(false);
+        toast({
+          description: "Error sending message. Please try again.",
+        });
       }
     } catch (error) {
       console.error("Error:", error);
       setLoading(false);
+      toast({
+        description: "Error sending message. Please try again.",
+      });
     }
   }
 
@@ -66,22 +80,25 @@ export default function ContactForm() {
             placeholder="Enter your name"
             id="name"
             className="min-w-max"
+            required
           />
         </div>
         <div className="py-2">
           <Input
-            type="enail"
+            type="email"
             placeholder="Enter your email"
             id="email"
             className="min-w-max"
+            required
           />
         </div>
         <div className="py-2">
           <Input
             type="text"
-            placeholder="Enter a email title"
+            placeholder="Enter an email title"
             id="subject"
             className="min-w-max"
+            required
           />
         </div>
         <div className="py-2 max-h-full">
@@ -89,11 +106,14 @@ export default function ContactForm() {
             placeholder="Enter your message"
             className="min-w-max"
             name="message"
+            required
           />
         </div>
         <Button
+          variant="outline"
           type="submit"
           className="bg-accent hover:bg-primary text-background px-5 py-2 my-2 rounded font-body min-w-max"
+          disabled={loading}
         >
           <SendIcon />
           Send Message
@@ -102,4 +122,3 @@ export default function ContactForm() {
     </div>
   );
 }
-

@@ -14,16 +14,16 @@ export default function Home() {
         <Divider />
 
         <p className="text-justify indent-4 hyphens-auto">
-          I'm a Network Engineering graduate currently working as a
-          cybersecurity intern. I'm always eager to learn new things and work on
-          side projects. You can find all my projects on the&nbsp;
+          I&#39;m a Network Engineering graduate currently working as a
+          cybersecurity intern. I&#39;m always eager to learn new things and
+          work on side projects. You can find all my projects on the{" "}
           <a
             href="/projects"
             className="text-accent hover:text-primary hover:underline"
           >
-            projects page&nbsp;
+            projects page{" "}
           </a>
-          or on my&nbsp;
+          or on my{" "}
           <a
             href="https://github.com/paugarcia32"
             className="text-accent hover:text-primary hover:underline"
@@ -56,6 +56,10 @@ export default function Home() {
           <div className="">
             <span className="mr-4 font-bold">2024</span>
             Complete a university degree in Network Engineering
+          </div>
+          <div className="">
+            <span className="mr-4 font-bold">2024</span>
+            Started as a cybersecurity intern
           </div>
         </div>
       </div>
