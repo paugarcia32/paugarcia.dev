@@ -246,14 +246,14 @@ export const ContactCard: React.FC<ContactCardProps> = ({
   link,
 }) => {
   const CardContentElement = (
-    <Card className="border-none bg-background/60 dark:bg-default-100/50 mx-20 md:mx-5">
+    <Card className="border-none bg-background/60 dark:bg-default-100/50 mx-20 md:mx-5 hover:bg-secondary">
       <CardContent>
         <div className="flex items-center justify-center">
           <div className="text-primary mx-2">{icon}</div>
           <div className="flex flex-col">
-            <div className="flex flex-col gap-0 ml-1">
+            <div className="flex flex-col gap-0 ml-1 mt-2">
               <h1 className="text-large font-medium mt-1">{site}</h1>
-              <p className="text-small text-foreground/80 mb-1">{username}</p>
+              <p className="text-small text-foreground/80">{username}</p>
             </div>
           </div>
         </div>
