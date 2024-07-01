@@ -18,9 +18,10 @@ import Link from "next/link";
 import { PostMetadata } from "./PostMetadata";
 import ResponsiveImage from "@/components/ResponsiveImage";
 import { Heading3, Heading4 } from "./Headings";
+
 export const InfoCard: React.FC = () => {
   return (
-    <Card className="w-full mx-auto my-4 p-2 border-none shadow-none">
+    <Card className="w-full mx-auto my-4 border-none shadow-none">
       <CardContent className="bg-secondary flex justify-center items-center p-4">
         <p className="text-center">
           Hi! I'm a network engineer graduate from Barcelona!
@@ -36,7 +37,7 @@ export const MeCard: React.FC = () => {
       <CardHeader>
         <CardTitle className="text-4xl font-bold">Pau Garcia</CardTitle>
         <CardDescription className="text-sm">
-          Cybersecurity, IoT and Developer enthusiast
+          Developer, Cybersecurity & IoT enthusiast
         </CardDescription>
       </CardHeader>
       <CardContent className="py-4">
@@ -51,18 +52,18 @@ export const MeCard: React.FC = () => {
 
 export const PersonalCard: React.FC = () => {
   return (
-    <Card className="flex flex-col  justify-center p-4 border-none shadow-none">
+    <Card className="flex items-center justify-center p-4 border-none shadow-none">
       <CardHeader>
+        <CardTitle className="text-4xl font-bold">Pau Garcia</CardTitle>
+        <CardDescription className="text-md">
+          Developer, Cybersecurity & IoT enthusiast
+        </CardDescription>
+      </CardHeader>
+      <CardContent className="py-4">
         <Avatar className="w-48 h-48">
           <AvatarImage src="https://avatars.githubusercontent.com/u/37461446?v=4" />
           <AvatarFallback>CN</AvatarFallback>
         </Avatar>
-      </CardHeader>
-      <CardContent className="py-4">
-        <CardTitle className="text-4xl font-bold">Pau Garcia</CardTitle>
-        <CardDescription className="text-sm">
-          Cybersecurity, IoT and Developer enthusiast
-        </CardDescription>
       </CardContent>
     </Card>
   );
@@ -164,20 +165,20 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
 }) => {
   return (
     <a href={url} target="_blank" rel="noopener noreferrer" className="block">
-      <Card className="rounded-lg p-4 hover:bg-secondary">
+      <Card className="rounded-lg hover:bg-secondary  max-h-[120]">
         <img
           src={image}
           alt={name}
           className="w-full h-48 object-cover rounded-t-lg"
         />
-        <CardHeader className="flex flex-col items-start space-y-2 mt-4">
+        <CardHeader className="flex flex-col items-start space-y-1 mt-2">
           <CardTitle className="text-lg font-semibold">{name}</CardTitle>
-        </CardHeader>
-        <CardContent>
           <CardDescription className="text-gray-600">
             {description}
           </CardDescription>
-          <div className="mt-4">
+        </CardHeader>
+        <CardContent>
+          <div className="mt-2">
             <div className="flex flex-wrap gap-2">
               {technologies.map((tech, index) => (
                 <Badge key={index}>{tech}</Badge>

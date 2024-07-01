@@ -8,8 +8,8 @@ export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="mx-auto w-full flex flex-col max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-4xl ">
-      <div className="flex justify-between items-center p-4 isolate">
+    <nav className="fixed top-0 left-0 right-0 w-full z-50 bg-white dark:bg-gray-900 ">
+      <div className="flex justify-between items-center px-4 py-2 max-w-4xl mx-auto">
         {/* Mobile Navbar layout */}
         <div className="sm:hidden w-full flex justify-between items-center">
           <Link href="/" legacyBehavior passHref>
@@ -59,7 +59,6 @@ export const Navbar = () => {
             </button>
           </div>
         </div>
-
         {/* PC Layout */}
         <div className="hidden sm:flex sm:items-center sm:justify-between w-full backdrop-blur-md">
           <div className="flex">

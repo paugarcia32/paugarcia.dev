@@ -7,32 +7,39 @@ import { Heading2 } from "@/components/Headings";
 export default function Home() {
   return (
     <main className="flex flex-col max-w-lg sm:max-w-xl p-4">
-      <MeCard />
+      <PersonalCard />
       <InfoCard />
       <div className="p-4 mb-12 w-full">
         <Heading2>Work</Heading2>
         <Divider />
+
         <p className="text-justify indent-4 hyphens-auto">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eget
-          ligula tincidunt, sollicitudin lacus quis, fermentum ex. Praesent
-          faucibus imperdiet magna. Duis a mi sed nibh cursus pulvinar nec sit
-          amet risus. Nam magna nisl, euismod eu pretium vel, mattis vel massa.
-          Donec non risus euismod, pretium massa eu, tempus tortor. Vestibulum
-          finibus nulla non lectus euismod ullamcorper. Donec ipsum diam,
-          accumsan vel arcu ut, auctor volutpat mauris. Morbi eu diam velit.
-          Morbi condimentum at ligula quis posuere. Proin faucibus pretium
-          turpis eget condimentum. Pellentesque elit ante, dictum vitae
-          hendrerit sed, ornare ac tortor. Pellentesque habitant morbi tristique
-          senectus et netus et malesuada fames ac turpis egestas. Maecenas sed
-          imperdiet arcu. Cras rutrum nisi arcu, tempor imperdiet leo bibendum
-          rhoncus. Cras vestibulum vestibulum nisi, nec egestas justo molestie
-          id. Praesent et commodo nunc.
+          I'm a Network Engineering graduate currently working as a
+          cybersecurity intern. I'm always eager to learn new things and work on
+          side projects. You can find all my projects on the&nbsp;
+          <a href="/projects" className="text-secondary hover:underline">
+            projects page&nbsp;
+          </a>
+          or on my&nbsp;
+          <a
+            href="https://github.com/paugarcia32"
+            className="text-secondary hover:underline"
+          >
+            GitHub
+          </a>
+          . I feel comfortable building full-stack applications and also
+          creating low-level programs using Arduinos and ESP32 microcontrollers.
+          My passion for technology drives me to continually explore and
+          innovate.
         </p>
+
         <div className="flex flex-col items-center mt-8">
-          <Button className="flex items-center">
-            My portfolio
-            <ChevronRight className="m-2 h-4 w-4" />
-          </Button>
+          <a href="/projects">
+            <Button className="flex items-center">
+              My portfolio
+              <ChevronRight className="m-2 h-4 w-4" />
+            </Button>
+          </a>
         </div>
       </div>
       <div className="p-4 mb-12 w-full ">
