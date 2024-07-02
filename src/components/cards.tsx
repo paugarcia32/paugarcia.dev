@@ -218,7 +218,9 @@ export const PostCard = (props: PostMetadata) => {
           </h2>
         </Link>
 
-        <p className="text-slate-400 mb-2">{props.subtitle}</p>
+        <p className="text-slate-500 dark:text-slate-400 mb-2">
+          {props.subtitle}
+        </p>
         <p className="text-default-500">{props.date}</p>
       </div>
     </Card>
@@ -238,7 +240,7 @@ export const ContactCard: React.FC<ContactCardProps> = ({
   link,
 }) => {
   const CardContentElement = (
-    <Card className="dark:bg-zinc-900 bg-zinc-300 hover:bg-zinc-400 dark:hover:bg-accent mx-20 md:mx-2 mb-4  hover:bg-accent">
+    <Card className="dark:bg-zinc-900 bg-zinc-300 hover:bg-zinc-400 dark:hover:bg-accent mx-20 md:mx-2 mb-4 hover:bg-accent">
       <CardContent>
         <div className="flex items-center justify-start ">
           <div className="text-primary mx-2">{icon}</div>

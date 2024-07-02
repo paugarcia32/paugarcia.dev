@@ -13,7 +13,9 @@ export const Navbar = () => {
         {/* Mobile Navbar layout */}
         <div className="sm:hidden w-full flex justify-between items-center">
           <Link href="/" legacyBehavior passHref>
-            <a className="text-lg font-semibold">Pau Garcia</a>
+            <a className="text-lg font-semibold hover:text-accent">
+              Pau Garcia
+            </a>
           </Link>
           <div className="flex items-center space-x-2">
             <ThemeToggle />
@@ -63,14 +65,24 @@ export const Navbar = () => {
         <div className="hidden sm:flex sm:items-center sm:justify-between w-full backdrop-blur-md">
           <div className="flex">
             <Link href="/" legacyBehavior passHref>
-              <a className="text-lg font-semibold">Pau Garcia</a>
+              <a className="text-lg font-semibold hover:text-accent">
+                Pau Garcia
+              </a>
             </Link>
           </div>
           <div className="flex items-center space-x-6">
-            <Link href="/projects">Projects</Link>
-            <Link href="/blog">Blog</Link>
-            <Link href="/contact">Contact Me</Link>
-            <Link href="/about">More about me</Link>
+            <Link href="/projects" className="hover:text-accent">
+              Projects
+            </Link>
+            <Link href="/blog" className="hover:text-accent">
+              Blog
+            </Link>
+            <Link href="/contact" className="hover:text-accent">
+              Contact Me
+            </Link>
+            <Link href="/about" className="hover:text-accent">
+              More about me
+            </Link>
             <ThemeToggle />
           </div>
         </div>
@@ -80,9 +92,6 @@ export const Navbar = () => {
       {isMobileMenuOpen && (
         <div className="sm:hidden w-full" id="mobile-menu">
           <div className="px-2 pt-2 pb-3 space-y-1">
-            <Link href="/" className="block">
-              Home
-            </Link>
             <Link href="/projects" className="block">
               Projects
             </Link>

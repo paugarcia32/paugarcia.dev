@@ -8,7 +8,7 @@ import { Divider } from "@/components/Divider";
 
 export default function Contact() {
   return (
-    <div className="w-screen max-w-4xl m-0 mx-auto leading-relaxed p-2.5 md:p-10 lg:p-20">
+    <div className="w-screen max-w-4xl m-0 mx-auto  ">
       <h1 className="text-4xl font-bold mb-5 font-title">Get In Touch</h1>
       <Divider />
       <div className="flex flex-col md:flex-row gap-5 mb-5 w-full ">
