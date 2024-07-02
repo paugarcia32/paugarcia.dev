@@ -29,7 +29,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Navbar />
-          <div className="flex-1 max-w-lg sm:max-w-3xl mx-auto mt-20">
+          <div className="flex-1 max-w-md sm:max-w-3xl mx-auto mt-20">
             {children}
           </div>
         </ThemeProvider>

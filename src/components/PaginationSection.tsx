@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   Pagination,
   PaginationContent,
@@ -22,12 +22,15 @@ const PaginationSection: React.FC<PaginationSectionProps> = ({
   currentPage,
   setCurrentPage,
 }) => {
-  const pageNumbers = Array.from({ length: Math.ceil(totalPosts / postsPerPage) }, (_, i) => i + 1);
+  const pageNumbers = Array.from(
+    { length: Math.ceil(totalPosts / postsPerPage) },
+    (_, i) => i + 1,
+  );
   const maxPageNum = 5;
   const pageNumLimit = Math.floor(maxPageNum / 2);
   let activePages = pageNumbers.slice(
     Math.max(0, currentPage - 1 - pageNumLimit),
-    Math.min(currentPage - 1 + pageNumLimit + 1, pageNumbers.length)
+    Math.min(currentPage - 1 + pageNumLimit + 1, pageNumbers.length),
   );
 
   const handleNextPage = () => {
@@ -43,7 +46,7 @@ const PaginationSection: React.FC<PaginationSectionProps> = ({
   };
 
   const renderPages = () => {
-    const renderedPages = activePages.map(page => (
+    const renderedPages = activePages.map((page) => (
       <PaginationItem
         key={page}
         className={currentPage === page ? "bg-neutral-100 rounded-md" : ""}
@@ -59,7 +62,7 @@ const PaginationSection: React.FC<PaginationSectionProps> = ({
         <PaginationEllipsis
           key="ellipsis-start"
           onClick={() => setCurrentPage(activePages[0] - 1)}
-        />
+        />,
       );
     }
 
@@ -67,8 +70,10 @@ const PaginationSection: React.FC<PaginationSectionProps> = ({
       renderedPages.push(
         <PaginationEllipsis
           key="ellipsis-end"
-          onClick={() => setCurrentPage(activePages[activePages.length - 1] + 1)}
-        />
+          onClick={() =>
+            setCurrentPage(activePages[activePages.length - 1] + 1)
+          }
+        />,
       );
     }
 
@@ -76,7 +81,7 @@ const PaginationSection: React.FC<PaginationSectionProps> = ({
   };
 
   return (
-    <Pagination>
+    <Pagination className="text-accent">
       <PaginationContent>
         <PaginationItem>
           <PaginationPrevious onClick={handlePrevPage} />
