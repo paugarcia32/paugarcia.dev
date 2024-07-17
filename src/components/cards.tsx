@@ -195,7 +195,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
 
 export const PostCard = (props: PostMetadata) => {
   return (
-    <Card className="dark:bg-zinc-900 bg-zinc-300 hover:bg-zinc-400 dark:hover:bg-zinc-800 max-h-[120] border-none shadow-none">
+    <Card className="dark:bg-zinc-900 bg-zinc-300 hover:bg-zinc-400 dark:hover:bg-zinc-800 max-h-[120] border-none shadow-none mx-1">
       <img
         src={`/${props.banner}`}
         alt={props.title}

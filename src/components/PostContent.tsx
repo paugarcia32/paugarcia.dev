@@ -30,7 +30,12 @@ const PostContent: React.FC<PostContentProps> = ({ posts }) => {
     setCurrentPage(1);
   };
 
-  const filteredPosts = posts.filter((post) => {
+  // Ordenar los posts por fecha en orden descendente (más recientes primero)
+  const sortedPosts = [...posts].sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+  );
+
+  const filteredPosts = sortedPosts.filter((post) => {
     const matchesSearchTerm =
       post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
       post.subtitle.toLowerCase().includes(searchTerm.toLowerCase());
@@ -47,7 +52,7 @@ const PostContent: React.FC<PostContentProps> = ({ posts }) => {
   const totalPages = Math.ceil(filteredPosts.length / PAGE_SIZE);
 
   return (
-    <div className="max-w-6xl">
+    <div className="max-w-lg sm:max-w-xl">
       <div className="flex justify-center">
         <Input
           className="mb-4 max-w-xl mx-8"
@@ -56,30 +61,26 @@ const PostContent: React.FC<PostContentProps> = ({ posts }) => {
           onChange={(e) => setSearchTerm(e.target.value)}
         />
       </div>
-      <div className="md:flex">
-        <div className="md:w-1/4 mx-8 md:mx-4">
-          <div className="md:sticky md:top-16 md:mt-12">
-            <Select value={selectedTag || ""} onValueChange={handleTagChange}>
-              <SelectTrigger className="max-w-xl">
-                <Hash className="text-2xl pointer-events-none flex-shrink-0 text-primary" />
-                <SelectValue placeholder="Filter by Tag" />
-              </SelectTrigger>
-              <SelectContent>
-                {allTags.map((tag) => (
-                  <SelectItem key={tag} value={tag}>
-                    {tag}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-          </div>
-        </div>
-        <div className="md:w-3/4 md:mx-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 md:max-w-2xl gap-1 my-10">
-            {currentPosts.map((post) => (
-              <PostCard key={post.slug} {...post} />
+      <div className="flex justify-center mb-4">
+        <Select value={selectedTag || ""} onValueChange={handleTagChange}>
+          <SelectTrigger className="max-w-xl w-full mx-8">
+            <Hash className="text-2xl pointer-events-none flex-shrink-0 text-primary" />
+            <SelectValue placeholder="Filter by Tag" />
+          </SelectTrigger>
+          <SelectContent>
+            {allTags.map((tag) => (
+              <SelectItem key={tag} value={tag}>
+                {tag}
+              </SelectItem>
             ))}
-          </div>
+          </SelectContent>
+        </Select>
+      </div>
+      <div className="md:flex md:flex-col">
+        <div className="grid grid-cols-1 md:grid-cols-2 md:max-w-2xl gap-1 my-10">
+          {currentPosts.map((post) => (
+            <PostCard key={post.slug} {...post} />
+          ))}
         </div>
       </div>
       <div className="flex justify-center mb-6">

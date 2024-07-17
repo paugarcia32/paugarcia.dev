@@ -1,7 +1,7 @@
 ---
 title: "How to dual-boot Ubuntu and Windows 11"
 subtitle: "Achieving Dual-Boot Harmony: Windows 11 and Ubuntu Installation Guide"
-date: "2020-12-27"
+date: "2024-1-27"
 banner: "./images/dual-boot-ubuntu.jpg"
 tags:
   - "Linux"
