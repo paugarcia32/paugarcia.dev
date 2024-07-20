@@ -71,40 +71,40 @@ export default function ContactForm() {
   }
 
   return (
-    <div className="dark:bg-zinc-900 bg-zinc-300 py-5 px-10 mx-10 rounded-xl shadow-lg font-body w-lg">
-      <h2 className="font-bold text-lg py-4 font-title">Contact Me!</h2>
-      <form onSubmit={handleSubmit}>
+    <div className="dark:bg-zinc-900 bg-zinc-300 py-5 px-10 mx-10 rounded-xl shadow-lg font-body max-w-lg w-full">
+      <h2 className="font-bold text-lg py-4 font-title mx-auto">Contact Me!</h2>
+      <form onSubmit={handleSubmit} className="flex flex-col items-center">
         <div className="py-2 w-full">
           <Input
             type="text"
             placeholder="Enter your name"
             id="name"
-            className="min-w-max"
+            className="w-full"
             required
           />
         </div>
-        <div className="py-2">
+        <div className="py-2 w-full">
           <Input
             type="email"
             placeholder="Enter your email"
             id="email"
-            className="min-w-max"
+            className="w-full"
             required
           />
         </div>
-        <div className="py-2">
+        <div className="py-2 w-full">
           <Input
             type="text"
             placeholder="Enter an email title"
             id="subject"
-            className="min-w-max"
+            className="w-full"
             required
           />
         </div>
-        <div className="py-2 max-h-full">
+        <div className="py-2 w-full">
           <Textarea
             placeholder="Enter your message"
-            className="min-w-max"
+            className="w-full"
             name="message"
             required
           />
@@ -112,10 +112,10 @@ export default function ContactForm() {
         <Button
           variant="outline"
           type="submit"
-          className="bg-accent hover:bg-primary text-background px-5 py-2 my-2 rounded font-body min-w-max"
+          className="bg-accent hover:bg-primary text-background px-5 py-2 my-2 rounded font-body flex items-center"
           disabled={loading}
         >
-          <SendIcon />
+          <SendIcon className="mr-2" />
           Send Message
         </Button>
       </form>
