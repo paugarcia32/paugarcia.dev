@@ -7,6 +7,53 @@ import { projects } from "@/data/projectsData";
 import { Github } from "lucide-react";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
+import { ProjectCard } from "@/components/cards";
+
+// Función para obtener proyectos relacionados basados en tecnologías
+const getRelatedProjects = (technologies: string[], currentSlug: string) => {
+  return projects
+    .filter(
+      (project) =>
+        project.name !== currentSlug &&
+        project.technologies.some((tech) => technologies.includes(tech)),
+    )
+    .slice(0, 3); // Limitar a 3 proyectos relacionados
+};
+
+const RelatedProjectsSection = ({
+  technologies,
+  currentSlug,
+}: {
+  technologies: string[];
+  currentSlug: string;
+}) => {
+  const relatedProjects = getRelatedProjects(technologies, currentSlug);
+
+  return (
+    <div className="mt-10 text-center">
+      <h1 className="text-2xl font-title font-semibold mb-4">
+        Related Projects
+      </h1>
+      <div className="flex flex-wrap justify-center gap-6">
+        {relatedProjects.map((project) => (
+          <div
+            className="flex-shrink-0"
+            style={{ width: "300px" }}
+            key={project.name}
+          >
+            <ProjectCard
+              name={project.name}
+              description={project.description}
+              technologies={project.technologies}
+              image={project.image}
+              url={project.url}
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
 
 export default function ProjectDetailPage({
   params,
@@ -85,6 +132,11 @@ export default function ProjectDetailPage({
             </div>
           </div>
         </div>
+        {/* Related Projects Section */}
+        <RelatedProjectsSection
+          technologies={project.technologies}
+          currentSlug={project.name}
+        />
       </Layout>
     </main>
   );
