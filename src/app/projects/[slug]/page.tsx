@@ -5,9 +5,11 @@ import Layout from "@/components/Layout";
 import { Divider } from "@/components/Divider";
 import { projects } from "@/data/projectsData";
 import { Github } from "lucide-react";
+import { Heading1, Heading2, Heading3 } from "@/components/Headings";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { ProjectCard } from "@/components/cards";
+import { Button } from "@/components/ui/button";
 
 // Función para obtener proyectos relacionados basados en tecnologías
 const getRelatedProjects = (technologies: string[], currentSlug: string) => {
@@ -31,9 +33,7 @@ const RelatedProjectsSection = ({
 
   return (
     <div className="mt-10 text-center">
-      <h1 className="text-2xl font-title font-semibold mb-4">
-        Related Projects
-      </h1>
+      <Heading2>Related Projects</Heading2>
       <div className="flex flex-wrap justify-center gap-6">
         {relatedProjects.map((project) => (
           <div
@@ -70,26 +70,14 @@ export default function ProjectDetailPage({
   return (
     <main className="container mx-auto p-4">
       <Layout title={project.name}>
-        <h1 className="font-bold text-xl mb-4">{project.name}</h1>
+        <Heading1>{project.name}</Heading1>
         <Divider />
         <div className="md:flex md:mt-10">
           {/* Left div */}
           <div className="md:w-1/4 mb-8">
-            <div className="md:sticky md:top-16 md:mt-12">
-              <p className="mb-4">{project.description}</p>
-              <div className="flex items-center mt-2 mb-6">
-                <Github className="mr-2" />
-                <Link
-                  href={project.url}
-                  target="_blank"
-                  className="text-blue-500 underline"
-                >
-                  View Project
-                </Link>
-              </div>
-              <div className="mt-6">
-                <h2 className="font-semibold text-lg mb-2">Technologies:</h2>
-                <div className="flex justify-start items-center gap-2 flex-wrap">
+            <div className="py-4">
+              <div className="mb-4">
+                <div className="flex justify-start items-center gap-0.5 flex-wrap">
                   {project.technologies.map((tech, index) => (
                     <Badge
                       key={index}
@@ -100,20 +88,32 @@ export default function ProjectDetailPage({
                   ))}
                 </div>
               </div>
+              <p className="mb-4">{project.description}</p>
+              <Link
+                href={project.url}
+                passHref
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <Button className="flex items-center" rel="noopener noreferrer">
+                  <Github className="m-2 h-4 w-4" />
+                  View Project
+                </Button>
+              </Link>
             </div>
           </div>
           {/* Right div */}
           <div className="md:w-3/4 md:pl-8 grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="p-4 bg-gray-100 dark:bg-gray-800 rounded-lg shadow-md">
-              <h2 className="font-semibold text-lg mb-2">Scenario</h2>
+            <div className="p-4 ">
+              <Heading3>Scenario</Heading3>
               <p>{project.scenario || "Not provided"}</p>
             </div>
-            <div className="p-4 bg-gray-100 dark:bg-gray-800 rounded-lg shadow-md">
-              <h2 className="font-semibold text-lg mb-2">Main Problem</h2>
+            <div className="p-4 ">
+              <Heading3>Main Problem</Heading3>
               <p>{project.problem || "Not provided"}</p>
             </div>
-            <div className="p-4 bg-gray-100 dark:bg-gray-800 rounded-lg shadow-md">
-              <h2 className="font-semibold text-lg mb-2">Project Goals</h2>
+            <div className="p-4 ">
+              <Heading3>Project Goals</Heading3>
               <ul className="list-disc pl-5">
                 {project.goals.length > 0 ? (
                   project.goals.map((goal, index) => (
@@ -126,8 +126,8 @@ export default function ProjectDetailPage({
                 )}
               </ul>
             </div>
-            <div className="p-4 bg-gray-100 dark:bg-gray-800 rounded-lg shadow-md">
-              <h2 className="font-semibold text-lg mb-2">My Role</h2>
+            <div className="p-4 ">
+              <Heading3>My Role</Heading3>
               <p>{project.role || "Not provided"}</p>
             </div>
           </div>
