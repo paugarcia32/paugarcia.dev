@@ -240,7 +240,7 @@ export const ContactCard: React.FC<ContactCardProps> = ({
   link,
 }) => {
   const CardContentElement = (
-    <Card className="dark:bg-zinc-900 bg-zinc-300 hover:bg-zinc-400 dark:hover:bg-accent mx-20 md:mx-2 mb-4 hover:bg-accent">
+    <Card className="dark:bg-zinc-900 bg-zinc-300 hover:bg-zinc-400 dark:hover:bg-accent mx-8  md:mx-2 mb-4 hover:bg-accent">
       <CardContent>
         <div className="flex items-center justify-start ">
           <div className="text-primary mx-2">{icon}</div>
