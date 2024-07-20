@@ -71,7 +71,7 @@ export default function ContactForm() {
   }
 
   return (
-    <div className="dark:bg-zinc-900 bg-zinc-300 py-5 px-10 mx-10 rounded-xl shadow-lg font-body max-w-lg w-full">
+    <div className="dark:bg-zinc-900 bg-zinc-300 py-5 px-10 mx-auto rounded-xl shadow-lg font-body max-w-lg w-full">
       <h2 className="font-bold text-lg py-4 font-title mx-auto">Contact Me!</h2>
       <form onSubmit={handleSubmit} className="flex flex-col items-center">
         <div className="py-2 w-full">
