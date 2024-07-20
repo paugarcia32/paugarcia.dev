@@ -166,30 +166,32 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   url,
 }) => {
   return (
-    <a href={url} target="_blank" rel="noopener noreferrer" className="block">
-      <Card className=" dark:bg-zinc-900 bg-zinc-300 hover:bg-zinc-400 dark:hover:bg-zinc-800 max-h-[120]">
-        <img
-          src={image}
-          alt={name}
-          className="w-full h-48 object-cover rounded-t-lg"
-        />
-        <CardHeader className="flex flex-col items-start space-y-1 mt-2">
-          <CardTitle className="text-lg font-semibold">{name}</CardTitle>
-          <CardDescription className="text-gray-600">
-            {description}
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <div className="mt-2">
-            <div className="flex flex-wrap gap-2">
-              {technologies.map((tech, index) => (
-                <Badge key={index}>{tech}</Badge>
-              ))}
+    <Link href={`/projects/${encodeURIComponent(name)}`} passHref>
+      <div className="block">
+        <Card className="dark:bg-zinc-900 bg-zinc-300 hover:bg-zinc-400 dark:hover:bg-zinc-800 max-h-[120]">
+          <img
+            src={image}
+            alt={name}
+            className="w-full h-48 object-cover rounded-t-lg"
+          />
+          <CardHeader className="flex flex-col items-start space-y-1 mt-2">
+            <CardTitle className="text-lg font-semibold">{name}</CardTitle>
+            <CardDescription className="text-gray-600">
+              {description}
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="mt-2">
+              <div className="flex flex-wrap gap-2">
+                {technologies.map((tech, index) => (
+                  <Badge key={index}>{tech}</Badge>
+                ))}
+              </div>
             </div>
-          </div>
-        </CardContent>
-      </Card>
-    </a>
+          </CardContent>
+        </Card>
+      </div>
+    </Link>
   );
 };
 
