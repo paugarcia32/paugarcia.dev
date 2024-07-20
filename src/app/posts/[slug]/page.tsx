@@ -3,7 +3,7 @@ import Markdown from "markdown-to-jsx";
 import matter from "gray-matter";
 import getPostMetadata from "@/lib/getPostMetadata";
 import TOC from "@/components/TOC";
-import { SearchIcon, TagIcon } from "@/components/icons";
+import { TagIcon } from "@/components/icons";
 import { Separator } from "@/components/ui/separator";
 import DownloadButton from "@/components/downloadButton";
 import { PostMetadata } from "@/components/PostMetadata";

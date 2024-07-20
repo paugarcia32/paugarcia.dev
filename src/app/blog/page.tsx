@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import PostContent from "@/components/PostContent";
 import { PostMetadata } from "@/components/PostMetadata";
+import Layout from "@/components/Layout";
 
 const BlogPage: React.FC = () => {
   const [posts, setPosts] = useState<PostMetadata[]>([]);
@@ -33,7 +34,10 @@ const BlogPage: React.FC = () => {
 
   return (
     <main className="mx-auto">
-      {error ? <div>Error: {error}</div> : <PostContent posts={posts} />}
+      <Layout title="Blog">
+        {" "}
+        {error ? <div>Error: {error}</div> : <PostContent posts={posts} />}
+      </Layout>
     </main>
   );
 };
