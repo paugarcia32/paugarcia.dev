@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
+import Image from "next/image";
 
 interface ResponsiveImageProps {
   lightSrc: string;
@@ -24,7 +25,7 @@ const ResponsiveImage: React.FC<ResponsiveImageProps> = ({
   }, [resolvedTheme]);
 
   return (
-    <img
+    <Image
       src={theme === "dark" ? darkSrc : lightSrc}
       alt={alt}
       className={className}

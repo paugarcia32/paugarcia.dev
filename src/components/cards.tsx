@@ -18,6 +18,7 @@ import Link from "next/link";
 import { PostMetadata } from "./PostMetadata";
 import ResponsiveImage from "@/components/ResponsiveImage";
 import { Heading3, Heading4 } from "./Headings";
+import Image from "next/image";
 
 export const InfoCard: React.FC = () => {
   return (
@@ -169,7 +170,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
     <Link href={`/projects/${encodeURIComponent(name)}`} passHref>
       <div className="block">
         <Card className="dark:bg-zinc-900 bg-zinc-300 hover:bg-zinc-400 dark:hover:bg-zinc-800 max-h-[120]">
-          <img
+          <Image
             src={image}
             alt={name}
             className="w-full h-48 object-cover rounded-t-lg"
@@ -198,7 +199,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
 export const PostCard = (props: PostMetadata) => {
   return (
     <Card className="dark:bg-zinc-900 bg-zinc-300 hover:bg-zinc-400 dark:hover:bg-zinc-800 max-h-[120] border-none shadow-none mx-1">
-      <img
+      <Image
         src={`/${props.banner}`}
         alt={props.title}
         className="w-full h-48 object-cover rounded-t-lg"
