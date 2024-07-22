@@ -8,6 +8,8 @@ import { Button } from "@/components/ui/button";
 import { ChevronRight } from "lucide-react";
 import DownloadCVButton from "@/components/DownloadCVButton";
 import Layout from "@/components/Layout";
+import { personalEvents } from "@/data/eventsData";
+import Link from "next/link";
 
 const dotfiles = [
   {
@@ -77,14 +79,16 @@ const AboutPage: React.FC = () => {
           <Heading2>Events</Heading2>
           <Divider />
           <div className="">
-            <div className="">
-              <span className="mr-4 font-bold">May, 2024</span>
-              HackUPC
-            </div>
-            <div className="">
-              <span className="mr-4 font-bold">Jun, 2024 </span>
-              HackBCN
-            </div>
+            {personalEvents.map((event, index) => (
+              <div key={index} className="">
+                <span className="mr-4 font-bold">{event.date}</span>
+                {event.url ? (
+                  <Link href={event.url}>{event.name}</Link>
+                ) : (
+                  event.name
+                )}
+              </div>
+            ))}
           </div>
         </div>
 

@@ -8,6 +8,8 @@ import { Heading2 } from "@/components/Headings";
 import Section from "@/components/Section";
 import Layout from "@/components/Layout";
 import Link from "next/link";
+import { bioEvents } from "@/data/bioData";
+
 export default function Home() {
   return (
     <main className="flex flex-col max-w-lg sm:max-w-xl p-4">
@@ -57,18 +59,12 @@ export default function Home() {
             <Heading2>Bio</Heading2>
             <Divider />
             <div className="">
-              <div className="">
-                <span className="mr-4 font-bold">2002</span>
-                Born in Barcelona, Spain
-              </div>
-              <div className="">
-                <span className="mr-4 font-bold">2024</span>
-                Complete a university degree in Network Engineering
-              </div>
-              <div className="">
-                <span className="mr-4 font-bold">2024</span>
-                Started as a cybersecurity intern
-              </div>
+              {bioEvents.map((event, index) => (
+                <div key={index} className="">
+                  <span className="mr-4 font-bold">{event.year}</span>
+                  {event.description}
+                </div>
+              ))}
             </div>
           </div>
         </Section>
