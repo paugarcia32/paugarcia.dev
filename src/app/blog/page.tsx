@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import PostContent from "@/components/PostContent";
 import { PostMetadata } from "@/components/PostMetadata";
-import Layout from "@/components/Layout";
+import Layout from "@/components/style/Layout";
 
 const BlogPage: React.FC = () => {
   const [posts, setPosts] = useState<PostMetadata[]>([]);

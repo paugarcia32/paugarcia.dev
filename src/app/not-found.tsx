@@ -3,7 +3,7 @@
 // pages/not-found.tsx
 
 import Link from "next/link";
-import Layout from "@/components/Layout";
+import Layout from "@/components/style/Layout";
 
 const NotFoundPage: React.FC = () => {
   return (

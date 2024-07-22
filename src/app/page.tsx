@@ -2,11 +2,11 @@
 
 import { ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Divider } from "@/components/Divider";
+import { Divider } from "@/components/style/Divider";
 import { InfoCard, InfoList, PersonalCard } from "@/components/cards";
-import { Heading2 } from "@/components/Headings";
-import Section from "@/components/Section";
-import Layout from "@/components/Layout";
+import { Heading2 } from "@/components/style/Headings";
+import Section from "@/components/style/Section";
+import Layout from "@/components/style/Layout";
 import Link from "next/link";
 import { bioEvents } from "@/data/bioData";
 

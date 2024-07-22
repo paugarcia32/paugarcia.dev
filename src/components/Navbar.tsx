@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { ThemeToggle } from "./theme-toggle";
 import { Separator } from "./ui/separator";
-import Section from "./Section";
+import Section from "@/components/style/Section";
 
 export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

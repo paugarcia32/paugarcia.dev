@@ -1,11 +1,11 @@
 "use client";
 
 import { notFound } from "next/navigation";
-import Layout from "@/components/Layout";
-import { Divider } from "@/components/Divider";
+import Layout from "@/components/style/Layout";
+import { Divider } from "@/components/style/Divider";
 import { projects } from "@/data/projectsData";
 import { Github } from "lucide-react";
-import { Heading1, Heading2, Heading3 } from "@/components/Headings";
+import { Heading1, Heading2, Heading3 } from "@/components/style/Headings";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { ProjectCard } from "@/components/cards";

@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import Layout from "@/components/Layout";
-import { Divider } from "@/components/Divider";
+import Layout from "@/components/style/Layout";
+import { Divider } from "@/components/style/Divider";
 import { ProjectCard } from "@/components/cards";
 import { projects as allProjects } from "@/data/projectsData";
 import { Input } from "@/components/ui/input";
@@ -16,7 +16,7 @@ import {
 import { Tags } from "lucide-react";
 import Link from "next/link";
 import PaginationSection from "@/components/PaginationSection";
-import { Heading1 } from "@/components/Headings";
+import { Heading1 } from "@/components/style/Headings";
 
 const PAGE_SIZE = 6;
 export default function Projects() {

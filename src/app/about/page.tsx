@@ -1,13 +1,13 @@
 "use client";
 
 import React from "react";
-import { Divider } from "@/components/Divider";
-import { Heading1, Heading2 } from "@/components/Headings";
+import { Divider } from "@/components/style/Divider";
+import { Heading1, Heading2 } from "@/components/style/Headings";
 import { DotfileCard } from "@/components/cards";
 import { Button } from "@/components/ui/button";
 import { ChevronRight } from "lucide-react";
 import DownloadCVButton from "@/components/DownloadCVButton";
-import Layout from "@/components/Layout";
+import Layout from "@/components/style/Layout";
 import { personalEvents } from "@/data/eventsData";
 import Link from "next/link";
 

@@ -5,9 +5,9 @@
 import React from "react";
 import ContactForm from "@/components/contact-form";
 import ContactCardBuilder from "@/components/ContactCardBuilder";
-import { Divider } from "@/components/Divider";
-import Layout from "@/components/Layout";
-import { Heading1 } from "@/components/Headings";
+import { Divider } from "@/components/style/Divider";
+import Layout from "@/components/style/Layout";
+import { Heading1 } from "@/components/style/Headings";
 
 export default function Contact() {
   return (

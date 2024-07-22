@@ -17,7 +17,7 @@ import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
 import { PostMetadata } from "./PostMetadata";
 import ResponsiveImage from "@/components/ResponsiveImage";
-import { Heading3, Heading4 } from "./Headings";
+import { Heading3, Heading4 } from "@/components/style/Headings";
 import Image from "next/image";
 
 export const InfoCard: React.FC = () => {

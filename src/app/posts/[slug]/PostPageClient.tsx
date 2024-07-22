@@ -10,7 +10,7 @@ import DownloadButton from "@/components/downloadButton";
 import { PostMetadata } from "@/components/PostMetadata";
 import { PostCard } from "@/components/cards";
 import { Badge } from "@/components/ui/badge";
-import Section from "@/components/Section";
+import Section from "@/components/style/Section";
 
 const RelatedPostsSection = ({
   relatedPosts,

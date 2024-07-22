@@ -10,7 +10,6 @@ const styles = {
   h2: "text-2xl font-bold mt-7.5 mb-2.5 font-title",
   h3: "text-xl font-bold mb-2",
   h4: "text-lg font-semibold",
-  // Añade más estilos según sea necesario
 };
 
 const Heading1: React.FC<HeadingProps> = ({ children }) => (
