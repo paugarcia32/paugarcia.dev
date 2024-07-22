@@ -58,6 +58,7 @@ export default function ContactForm() {
         console.log("Error sending message");
         setLoading(false);
         toast({
+          variant: "destructive",
           description: "Error sending message. Please try again.",
         });
       }
