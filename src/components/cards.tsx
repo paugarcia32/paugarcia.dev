@@ -73,7 +73,7 @@ export const PersonalCard: React.FC = () => {
 
 export const LinkedInCard: React.FC = () => {
   return (
-    <a
+    <Link
       href="https://www.linkedin.com/in/paugarcia32"
       target="_blank"
       rel="noopener noreferrer"
@@ -89,7 +89,7 @@ export const LinkedInCard: React.FC = () => {
           </CardDescription>
         </CardContent>
       </Card>
-    </a>
+    </Link>
   );
 };
 
@@ -106,14 +106,14 @@ export const GithubCard: React.FC = () => {
         </CardDescription>
       </CardContent>
       <CardFooter>
-        <a
+        <Link
           href="https://github.com/paugarcia32"
           target="_blank"
           rel="noopener noreferrer"
           className="text-blue-500 hover:underline"
         >
           paugarcia32
-        </a>
+        </Link>
       </CardFooter>
     </Card>
   );
@@ -123,7 +123,7 @@ export const InfoList: React.FC = () => {
   return (
     <ul className="list-none">
       <li className="">
-        <a
+        <Link
           href="https://www.linkedin.com/in/paugarcia32"
           target="_blank"
           rel="noopener noreferrer"
@@ -132,10 +132,10 @@ export const InfoList: React.FC = () => {
           <Button className="bg-background text-current">
             <Linkedin className="mr-2 h-4 w-4" /> @paugarcia32
           </Button>
-        </a>
+        </Link>
       </li>
       <li className="">
-        <a
+        <Link
           href="https://github.com/paugarcia32"
           target="_blank"
           rel="noopener noreferrer"
@@ -144,7 +144,7 @@ export const InfoList: React.FC = () => {
           <Button className="bg-background text-current">
             <Github className="mr-2 h-4 w-4" /> @paugarcia32
           </Button>
-        </a>
+        </Link>
       </li>
     </ul>
   );

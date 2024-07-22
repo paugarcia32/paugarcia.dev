@@ -1,6 +1,7 @@
-'use client'
-import { useEffect, useState } from 'react';
-import { TOCIcon } from './icons';
+"use client";
+import { useEffect, useState } from "react";
+import { TOCIcon } from "./icons";
+import Link from "next/link";
 
 interface TOCItem {
   id: string;
@@ -12,14 +13,16 @@ const TOC = () => {
   const [tocItems, setTocItems] = useState<TOCItem[]>([]);
 
   useEffect(() => {
-    const headings = document.querySelectorAll('h2, h3, h4, h5, h6');
+    const headings = document.querySelectorAll("h2, h3, h4, h5, h6");
 
-    const tocItemsData: TOCItem[] = Array.from(headings).map((heading, index) => {
-      const headingId = `section-${index}`;
-      heading.setAttribute('id', headingId);
-      const level = parseInt(heading.tagName.charAt(1));
-      return { id: headingId, text: heading.textContent || '', level };
-    });
+    const tocItemsData: TOCItem[] = Array.from(headings).map(
+      (heading, index) => {
+        const headingId = `section-${index}`;
+        heading.setAttribute("id", headingId);
+        const level = parseInt(heading.tagName.charAt(1));
+        return { id: headingId, text: heading.textContent || "", level };
+      },
+    );
 
     setTocItems(tocItemsData);
   }, []);
@@ -27,19 +30,21 @@ const TOC = () => {
   const handleClick = (id: string) => {
     const heading = document.getElementById(id);
     if (heading) {
-      heading.scrollIntoView({ behavior: 'smooth' });
+      heading.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   useEffect(() => {
-    const headings = document.querySelectorAll('h2, h3, h4, h5, h6');
+    const headings = document.querySelectorAll("h2, h3, h4, h5, h6");
     const observer = new MutationObserver(() => {
-      const tocItemsData: TOCItem[] = Array.from(headings).map((heading, index) => {
-        const headingId = `section-${index}`;
-        heading.setAttribute('id', headingId);
-        const level = parseInt(heading.tagName.charAt(1));
-        return { id: headingId, text: heading.textContent || '', level };
-      });
+      const tocItemsData: TOCItem[] = Array.from(headings).map(
+        (heading, index) => {
+          const headingId = `section-${index}`;
+          heading.setAttribute("id", headingId);
+          const level = parseInt(heading.tagName.charAt(1));
+          return { id: headingId, text: heading.textContent || "", level };
+        },
+      );
 
       setTocItems(tocItemsData);
     });
@@ -55,17 +60,20 @@ const TOC = () => {
 
   return (
     <div>
-      <div className='flex items-center'>
-        <div className='text-primary'>
+      <div className="flex items-center">
+        <div className="text-primary">
           <TOCIcon />
         </div>
-        <h1 className='text-xl ml-2 mb-1 font-bold font-title'>Contents</h1>
+        <h1 className="text-xl ml-2 mb-1 font-bold font-title">Contents</h1>
       </div>
-      <div id="toc-container" className='bg-background p-4 font-title'>
+      <div id="toc-container" className="bg-background p-4 font-title">
         <ul>
           {tocItems.map((item) => (
-            <li key={item.id} style={{ paddingLeft: `${(item.level - 2) * 10}px` }}>
-              <a
+            <li
+              key={item.id}
+              style={{ paddingLeft: `${(item.level - 2) * 10}px` }}
+            >
+              <Link
                 href={`#${item.id}`}
                 className={`block py-1 text-sm hover:underline text-accent`}
                 onClick={(e) => {
@@ -74,7 +82,7 @@ const TOC = () => {
                 }}
               >
                 {item.text}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
@@ -84,3 +92,4 @@ const TOC = () => {
 };
 
 export default TOC;
+
