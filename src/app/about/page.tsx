@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Divider } from "@/components/Divider";
-import { Heading2 } from "@/components/Headings";
+import { Heading1, Heading2 } from "@/components/Headings";
 import { DotfileCard } from "@/components/cards";
 import { Button } from "@/components/ui/button";
 import { ChevronRight } from "lucide-react";

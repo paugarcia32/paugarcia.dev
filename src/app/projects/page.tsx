@@ -16,6 +16,7 @@ import {
 import { Tags } from "lucide-react";
 import Link from "next/link";
 import PaginationSection from "@/components/PaginationSection";
+import { Heading1 } from "@/components/Headings";
 
 const PAGE_SIZE = 6;
 export default function Projects() {
@@ -52,12 +53,11 @@ export default function Projects() {
     indexOfFirstProject,
     indexOfLastProject,
   );
-  const totalPages = Math.ceil(filteredProjects.length / PAGE_SIZE);
 
   return (
-    <main className="container mx-auto p-4">
+    <main className="max-w-lg sm:max-w-xl">
       <Layout title="Projects">
-        <h1 className="font-bold text-xl mb-4">Projects</h1>
+        <Heading1>Projects</Heading1>
         <Divider />
         <div className="flex justify-center items-center mb-4 space-x-2 border rounded-md shadow-sm">
           <Input
@@ -85,7 +85,7 @@ export default function Projects() {
             </Select>
           </div>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 m-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {currentProjects.map((project, index) => (
             <div key={index} className="mb-4 w-full">
               <Link href={`/projects/${encodeURIComponent(project.name)}`}>

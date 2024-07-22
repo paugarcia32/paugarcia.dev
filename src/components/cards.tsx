@@ -166,22 +166,22 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
 }) => {
   return (
     <Link href={`/projects/${encodeURIComponent(name)}`} passHref>
-      <div className="block">
-        <Card className="dark:bg-zinc-900 bg-zinc-300 hover:bg-zinc-400 dark:hover:bg-zinc-800 max-h-[120]">
-          <Image
-            src={image}
-            alt={name}
-            width={500}
-            height={200}
-            className="w-full h-48 object-cover rounded-t-lg"
-          />
-          <CardHeader className="flex flex-col items-start space-y-1 mt-2">
-            <CardTitle className="text-lg font-semibold">{name}</CardTitle>
-            <CardDescription className="text-gray-600">
-              {description}
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
+      <div className="block h-full">
+        <div className="dark:bg-zinc-900 bg-zinc-300 hover:bg-zinc-400 dark:hover:bg-zinc-800 rounded-sm border-sm flex flex-col h-full">
+          <div className="relative w-full h-48">
+            <Image
+              src={image}
+              alt={name}
+              layout="fill"
+              objectFit="cover"
+              className="rounded-t-lg"
+            />
+          </div>
+          <div className="flex flex-col justify-between flex-grow p-4">
+            <div className="flex flex-col items-start space-y-1 mb-2">
+              <Heading4>{name}</Heading4>
+              <p className="text-gray-600 text-sm">{description}</p>
+            </div>
             <div className="mt-2">
               <div className="flex flex-wrap gap-2">
                 {technologies.map((tech, index) => (
@@ -189,8 +189,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                 ))}
               </div>
             </div>
-          </CardContent>
-        </Card>
+          </div>
+        </div>
       </div>
     </Link>
   );

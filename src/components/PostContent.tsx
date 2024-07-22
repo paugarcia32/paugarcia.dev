@@ -48,7 +48,6 @@ const PostContent: React.FC<PostContentProps> = ({ posts }) => {
   const indexOfLastPost = currentPage * PAGE_SIZE;
   const indexOfFirstPost = indexOfLastPost - PAGE_SIZE;
   const currentPosts = filteredPosts.slice(indexOfFirstPost, indexOfLastPost);
-  const totalPages = Math.ceil(filteredPosts.length / PAGE_SIZE);
 
   return (
     <div className="max-w-lg sm:max-w-xl">

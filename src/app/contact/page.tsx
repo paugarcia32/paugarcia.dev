@@ -7,6 +7,7 @@ import ContactForm from "@/components/contact-form";
 import ContactCardBuilder from "@/components/ContactCardBuilder";
 import { Divider } from "@/components/Divider";
 import Layout from "@/components/Layout";
+import { Heading1 } from "@/components/Headings";
 
 export default function Contact() {
   return (
@@ -14,7 +15,7 @@ export default function Contact() {
       <Layout title="Contact">
         {" "}
         <div className="mb-8 w-full">
-          <h1 className="text-4xl font-bold mb-5 font-title">Get In Touch</h1>
+          <Heading1>Get In Touch</Heading1>
           <Divider />
           <div className="flex flex-col md:flex-row gap-5 mb-5 w-full ">
             <div className="md:mt-4 mx-4">
