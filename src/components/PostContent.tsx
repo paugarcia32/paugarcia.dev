@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { PostMetadata } from "@/components/PostMetadata";
 import { PostCard } from "@/components/cards";
-import { Hash } from "lucide-react";
+import { Tags } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import {
   Select,
@@ -30,7 +30,6 @@ const PostContent: React.FC<PostContentProps> = ({ posts }) => {
     setCurrentPage(1);
   };
 
-  // Ordenar los posts por fecha en orden descendente (más recientes primero)
   const sortedPosts = [...posts].sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
   );
@@ -53,28 +52,29 @@ const PostContent: React.FC<PostContentProps> = ({ posts }) => {
 
   return (
     <div className="max-w-lg sm:max-w-xl">
-      <div className="flex justify-center">
+      <div className="flex justify-center items-center mb-4 space-x-2 border rounded-md shadow-sm">
         <Input
-          className="mb-4 max-w-xl mx-8"
+          className="flex-grow max-w-xl border-none"
           type="text"
           placeholder="Search Posts ..."
           onChange={(e) => setSearchTerm(e.target.value)}
         />
-      </div>
-      <div className="flex justify-center mb-4">
-        <Select value={selectedTag || ""} onValueChange={handleTagChange}>
-          <SelectTrigger className="max-w-xl w-full mx-8">
-            <Hash className="text-2xl pointer-events-none flex-shrink-0 text-primary" />
-            <SelectValue placeholder="Filter by Tag" />
-          </SelectTrigger>
-          <SelectContent>
-            {allTags.map((tag) => (
-              <SelectItem key={tag} value={tag}>
-                {tag}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
+        <div className="m-1 pr-1">
+          {" "}
+          <Select value={selectedTag || ""} onValueChange={handleTagChange}>
+            <SelectTrigger className="w-32 border-none dark:bg-zinc-900 bg-zinc-300 hover:bg-zinc-400 dark:hover:bg-zinc-800">
+              <Tags className="text-primary" />
+              <SelectValue placeholder="Tags" />
+            </SelectTrigger>
+            <SelectContent>
+              {allTags.map((tag) => (
+                <SelectItem key={tag} value={tag}>
+                  {tag}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        </div>
       </div>
       <div className="md:flex md:flex-col">
         <div className="grid grid-cols-1 md:grid-cols-2 md:max-w-2xl gap-1 my-10">

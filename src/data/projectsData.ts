@@ -16,7 +16,7 @@ export const projects: Project[] = [
     description:
       "Personal blog where I shared my experiences in the IT sector.",
     technologies: ["NextJS", "TypeScript", "Tailwind CSS"],
-    image: "https://www.itodyssey.dev/images/embeddedLogo.jpg",
+    image: "/Projects/ItOdysseyBanner.jpg",
     url: "https://github.com/paugarcia32/IT-Odyssey",
     scenario:
       "This project was my first experience creating a web app. At that time, I thought it would be a good idea to showcase how I was improving and learning in the IT world.",
@@ -34,8 +34,7 @@ export const projects: Project[] = [
     description:
       "Developed during the HackBCN hackathon, this project is a vehicle radar that detects traffic jams and analyzes real-time data using the YOLOv10 model.",
     technologies: ["Python", "NextJS", "YOLOv10", "TeamWork"],
-    image:
-      "https://user-images.githubusercontent.com/70912643/206473946-974a60ab-f116-48b2-9cf0-f631fe7842eb.png",
+    image: "/Projects/TrafficFlowIABanner.png",
     url: "https://www.hackbarna.com/en/projects/TrafficFlow_AI",
     scenario:
       "This project was developed during the HackBCN event, where we had only 30 hours to create an AI-based solution with a team of 3 members.",
@@ -53,7 +52,7 @@ export const projects: Project[] = [
     description:
       "Developed during the HackUPC hackathon, this project is a real-time sensorization application.",
     technologies: ["Python", "Flutter", "ESP32", "TeamWork"],
-    image: "https://emariete.com/wp-content/uploads/2021/09/TTGO-Gadget.png",
+    image: "/Projects/IoTReal-TimeSensoringBanner.png",
     url: "https://github.com/CisHighLevel",
     scenario:
       "This project was developed during the HackUPC event, where we had only one weekend to create a tech project with a team of 4 members.",
@@ -71,7 +70,7 @@ export const projects: Project[] = [
     description:
       "Mobile app developed by a team of 5 members as part of university coursework.",
     technologies: ["Express.js", "Flutter", "MongoDB", "Teamwork"],
-    image: "eetacgo_image.png",
+    image: "/Projects/EetacGoBanner.png",
     url: "https://github.com/mariaubiergo2/EA-FRONTEND/",
     scenario:
       "This was a full-semester university project where we created a full-stack application as a team of 5 members.",
@@ -90,8 +89,7 @@ export const projects: Project[] = [
     description:
       "Mobile game developed by a team of 3 members as part of university coursework.",
     technologies: ["Java", "Unity", "MariaDB", "Teamwork"],
-    image:
-      "https://user-images.githubusercontent.com/101259091/215481940-060871fa-15c2-44e5-9011-1f6471609ad9.png",
+    image: "/Projects/PlannetSurvivorBanner.png",
     url: "https://github.com/MikelArinaMarcos/dsaProjectG6",
     scenario:
       "This project was developed over a semester as a university project with a team of 3 members.",
@@ -109,8 +107,7 @@ export const projects: Project[] = [
     description:
       "A CLI-based application designed to crack passwords using a dictionary attack.",
     technologies: ["Rust", "CLI"],
-    image:
-      "https://www.infosecinstitute.com/contentassets/056e05c7d3d9480cac5185cd56c75045/password-cracking-02222013.jpg",
+    image: "/Projects/PasswordCrackerBanner.jpg",
     url: "https://github.com/paugarcia32/CLI-Password-Cracker",
     scenario:
       "This project was my first foray into Rust programming. I aimed to create a command-line tool to understand dictionary-based password attacks.",
@@ -128,8 +125,7 @@ export const projects: Project[] = [
     description:
       "A CLI-based application that generates secure, random passwords.",
     technologies: ["Rust", "CLI"],
-    image:
-      "https://images.prismic.io/proton-me/f945b2b2-3bb4-44be-98e0-73af6ca82963_Image+1+-+mobile.png?auto=compress%2Cformat&fit=max",
+    image: "/Projects/PasswordGeneratorBanner.png",
     url: "https://github.com/paugarcia32/CLI-Password-Generator",
     scenario:
       "This project was another early Rust project where I aimed to build a CLI tool for generating strong, random passwords to enhance user security.",
@@ -147,8 +143,7 @@ export const projects: Project[] = [
     description:
       "A custom temperature and humidity indicator using the BME280 sensor, displayed on a 0.96-inch OLED screen with an ESP32 microcontroller.",
     technologies: ["Arduino", "C++", "ESP32"],
-    image:
-      "https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2019/05/ESP32_OLED.png?w=873&quality=100&strip=all&ssl=1",
+    image: "/Projects/BME280Banner.png",
     url: "https://github.com/paugarcia32/ESP-32-with-BME280-and-0.96OLED",
     scenario:
       "This was my first project involving ESP32 microcontrollers. I aimed to create a real-time environmental monitoring system using a BME280 sensor and an OLED display.",
@@ -166,8 +161,7 @@ export const projects: Project[] = [
     description:
       "A custom MQTT-based publish/subscribe mechanism for communication between an ESP32 microcontroller and a Raspberry Pi.",
     technologies: ["Raspberry Pi", "MQTT", "ESP32"],
-    image:
-      "https://i0.wp.com/borrowbits.com/wp-content/uploads/2020/04/broker-MQTT.png?fit=1488%2C794&ssl=1",
+    image: "/Projects/MQTTBanner.png",
     url: "https://github.com/paugarcia32/ESP32-MQTT-pub-sub",
     scenario:
       "This was my first experience with MQTT and IoT communication using ESP32 and Raspberry Pi. The project involved setting up an MQTT broker for reliable communication between devices.",

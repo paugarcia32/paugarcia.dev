@@ -28,6 +28,8 @@ const ResponsiveImage: React.FC<ResponsiveImageProps> = ({
     <Image
       src={theme === "dark" ? darkSrc : lightSrc}
       alt={alt}
+      width={500}
+      height={200}
       className={className}
     />
   );

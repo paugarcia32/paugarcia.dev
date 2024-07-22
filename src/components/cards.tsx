@@ -64,8 +64,7 @@ export const PersonalCard: React.FC = () => {
       </CardHeader>
       <CardContent className="py-4">
         <Avatar className="w-48 h-48">
-          <AvatarImage src="https://avatars.githubusercontent.com/u/37461446?v=4" />
-          <AvatarFallback>CN</AvatarFallback>
+          <AvatarImage src="profile.jpeg" />
         </Avatar>
       </CardContent>
     </Card>
@@ -164,7 +163,6 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   description,
   technologies,
   image,
-  url,
 }) => {
   return (
     <Link href={`/projects/${encodeURIComponent(name)}`} passHref>
@@ -173,6 +171,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
           <Image
             src={image}
             alt={name}
+            width={500}
+            height={200}
             className="w-full h-48 object-cover rounded-t-lg"
           />
           <CardHeader className="flex flex-col items-start space-y-1 mt-2">
@@ -202,6 +202,8 @@ export const PostCard = (props: PostMetadata) => {
       <Image
         src={`/${props.banner}`}
         alt={props.title}
+        width={500}
+        height={200}
         className="w-full h-48 object-cover rounded-t-lg"
       />
       <div className="p-4">
@@ -279,7 +281,12 @@ export const DotfileCard: React.FC<DotfileCardProps> = ({
   url,
 }) => {
   return (
-    <a href={url} target="_blank" rel="noopener noreferrer" className="block">
+    <Link
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="block"
+    >
       <div className="flex flex-col items-center p-4">
         <Card className="rounded-lg hover:bg-secondary mb-2">
           <ResponsiveImage
@@ -291,6 +298,6 @@ export const DotfileCard: React.FC<DotfileCardProps> = ({
         </Card>
         <Heading4>{name}</Heading4>
       </div>
-    </a>
+    </Link>
   );
 };
