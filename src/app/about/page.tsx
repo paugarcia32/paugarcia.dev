@@ -23,10 +23,10 @@ const dotfiles = [
     url: "https://github.com/paugarcia32/dotfiles/neovim",
   },
   {
-    name: "Neovim Code Config",
-    lightImage: "/images/codeNvimlight.png",
-    darkImage: "/images/codeNvimdark.png",
-    url: "https://github.com/paugarcia32/dotfiles/neovim-code",
+    name: "VSCode Config",
+    lightImage: "/images/vslight.png",
+    darkImage: "/images/vsdark.png",
+    url: "https://github.com/paugarcia32/.dotfiles/blob/master/settings.json",
   },
   {
     name: "Firefox Config",

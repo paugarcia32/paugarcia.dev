@@ -28,7 +28,7 @@ const contactInfo = [
 
 const ContactCardBuilder: React.FC = () => {
   return (
-    <div className="flex flex-col md:flex-row g-2 my-20">
+    <div className="flex flex-col md:flex-row g-2 my-20 justify-center">
       {contactInfo.map((info, index) => (
         <ContactCard
           key={index}

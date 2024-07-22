@@ -180,7 +180,9 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
           <div className="flex flex-col justify-between flex-grow p-4">
             <div className="flex flex-col items-start space-y-1 mb-2">
               <Heading4>{name}</Heading4>
-              <p className="text-gray-600 text-sm">{description}</p>
+              <p className="text-gray-600 dark:text-gray-500 text-sm">
+                {description}
+              </p>
             </div>
             <div className="mt-2">
               <div className="flex flex-wrap gap-2">
@@ -249,7 +251,7 @@ export const ContactCard: React.FC<ContactCardProps> = ({
       <div className="flex items-center my-4">
         <div className="flex items-center  w-full">
           <div className="text-primary ml-8 mr-4 flex-shrink-0">{icon}</div>
-          <div className="flex flex-col ml-2">
+          <div className="flex flex-col mr-8">
             <h1 className="text-large font-medium">{site}</h1>
             <p className="text-small text-foreground/80">{username}</p>
           </div>
