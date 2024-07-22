@@ -3,6 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import { ThemeToggle } from "./theme-toggle";
+import { Separator } from "./ui/separator";
+import Section from "./Section";
 
 export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -21,7 +23,7 @@ export const Navbar = () => {
             <ThemeToggle />
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-inset"
+              className="inline-flex items-center justify-center p-2 rounded-md "
               aria-controls="mobile-menu"
               aria-expanded={isMobileMenuOpen}
             >
@@ -90,22 +92,27 @@ export const Navbar = () => {
 
       {/* Mobile menu, show/hide based on menu state */}
       {isMobileMenuOpen && (
-        <div className="sm:hidden w-full" id="mobile-menu">
-          <div className="px-2 pt-2 pb-3 space-y-1">
-            <Link href="/projects" className="block">
-              Projects
-            </Link>
-            <Link href="/blog" className="block">
-              Blog
-            </Link>
-            <Link href="/contact" className="block">
-              Contact Me
-            </Link>
-            <Link href="/about" className="block">
-              More about me
-            </Link>
+        <Section>
+          <div className="sm:hidden w-full border rounded" id="mobile-menu">
+            <div className="px-2 pt-2 pb-3 space-y-1">
+              <Link href="/projects" className="block mx-4">
+                Projects
+              </Link>
+              <Separator className="px-16" />
+              <Link href="/blog" className="block mx-4">
+                Blog
+              </Link>
+              <Separator className="px-16" />
+              <Link href="/contact" className="block mx-4">
+                Contact Me
+              </Link>
+              <Separator className="px-16" />
+              <Link href="/about" className="block mx-4">
+                More about me
+              </Link>
+            </div>
           </div>
-        </div>
+        </Section>
       )}
     </nav>
   );
