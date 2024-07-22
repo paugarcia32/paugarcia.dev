@@ -244,24 +244,22 @@ export const ContactCard: React.FC<ContactCardProps> = ({
 }) => {
   const CardContentElement = (
     <Card className="dark:bg-zinc-900 bg-zinc-300 hover:bg-zinc-400 dark:hover:bg-accent mx-8  md:mx-2 mb-4 hover:bg-accent">
-      <CardContent>
-        <div className="flex items-center justify-start ">
-          <div className="text-primary mx-2">{icon}</div>
-          <div className="flex flex-col">
-            <div className="flex flex-col gap-0 ml-1 mt-2">
-              <h1 className="text-large font-medium mt-1">{site}</h1>
-              <p className="text-small text-foreground/80">{username}</p>
-            </div>
+      <div className="flex items-center my-4">
+        <div className="flex items-center  w-full">
+          <div className="text-primary ml-8 mr-4 flex-shrink-0">{icon}</div>
+          <div className="flex flex-col ml-2">
+            <h1 className="text-large font-medium">{site}</h1>
+            <p className="text-small text-foreground/80">{username}</p>
           </div>
         </div>
-      </CardContent>
+      </div>
     </Card>
   );
 
   return link ? (
-    <a href={link} target="_blank" rel="noopener noreferrer">
+    <Link href={link} target="_blank" rel="noopener noreferrer">
       {CardContentElement}
-    </a>
+    </Link>
   ) : (
     CardContentElement
   );
