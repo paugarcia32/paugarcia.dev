@@ -19,6 +19,7 @@ import PaginationSection from "@/components/PaginationSection";
 import { Heading1 } from "@/components/style/Headings";
 
 const PAGE_SIZE = 6;
+
 export default function Projects() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedTechnology, setSelectedTechnology] = useState<

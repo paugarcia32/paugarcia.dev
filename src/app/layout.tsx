@@ -13,7 +13,10 @@ import { Toaster } from "@/components/ui/toaster";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Pau Garcia",
+  title: {
+    template: "%s | Pau Garcia",
+    default: "Pau Garcia",
+  },
   description: "Personal portfolio",
 };
 
@@ -25,6 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en" style={{ height: "100%" }}>
       <body className={`${inter.className} flex flex-col min-h-screen`}>
+        {" "}
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
