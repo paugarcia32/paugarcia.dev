@@ -71,7 +71,7 @@ export const projects: Project[] = [
       "Mobile app developed by a team of 5 members as part of university coursework.",
     technologies: ["Express.js", "Flutter", "MongoDB", "Teamwork"],
     image: "/Projects/EetacGoBanner.png",
-    url: "https://github.com/mariaubiergo2/EA-FRONTEND/",
+    url: "https://github.com/paugarcia32/EETAC-GO",
     scenario:
       "This was a full-semester university project where we created a full-stack application as a team of 5 members.",
     problem:
@@ -84,6 +84,24 @@ export const projects: Project[] = [
     role: "My main role was developing the Flutter client.",
   },
 
+  {
+    name: "RSA Server",
+    description:
+      "Full-stack web app that implements RSA keys on server and client.",
+    technologies: ["Express.js", "Angular", "Teamwork"],
+    image: "/Projects/RSABanner.jpg",
+    url: "https://github.com/paugarcia32/RSA-Client-Server",
+    scenario:
+      "This was a university project where we created a full-stack application as a team of three members.",
+    problem:
+      "The main problem was dealing with the 'BigInt' types for the RSA keys. Since they are not a common type in TypeScript, it was difficult to work with them.",
+    goals: [
+      "Learn how RSA works in a real scenario.",
+      "Implement RSA methods securely.",
+      "Learn how to create a custom JavaScript module and implement it in the project.",
+    ],
+    role: "My main role was developing the logic behind the key exchange in the Angular project and assisting with the creation of the RSA module.",
+  },
   {
     name: "Planet Survivor",
     description:
@@ -136,6 +154,23 @@ export const projects: Project[] = [
       "Understand the implementation of randomness in programming",
     ],
     role: "I developed the password generation algorithm and designed the CLI interface to ensure usability and security.",
+  },
+
+  {
+    name: "Quantum Circuits",
+    description: "Simple quantum circuits that use Hadamard and Pauli gates.",
+    technologies: ["Python", "Qiskit"],
+    image: "/Projects/QiskitBanner.png",
+    url: "https://github.com/paugarcia32/Quantum-Circuits-with-Qiskit",
+    scenario:
+      "This project was completed as part of a Quantum Computing course at my university.",
+    problem:
+      "The main challenge was using the Qiskit library due to the differences in function types across versions of the library.",
+    goals: [
+      "Implement Hadamard and Pauli gates in a quantum circuit.",
+      "Learn how to use the Qiskit library.",
+    ],
+    role: "My main role was to design, develop, and document the entire project.",
   },
 
   {
