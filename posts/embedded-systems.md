@@ -2,7 +2,7 @@
 title: "Introduction to Embedded Systems"
 subtitle: "Small Introduction to Embedded Systems: Getting Started and First Steps"
 date: "2024-4-28"
-banner: "./images/embeddedLogo.jpg"
+banner: "images/embeddedLogo.jpg"
 tags:
   - "embedded"
   - "software"
