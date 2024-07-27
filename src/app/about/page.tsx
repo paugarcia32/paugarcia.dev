@@ -16,13 +16,13 @@ const dotfiles = [
     name: "WezTerm Config",
     lightImage: "/images/wezlight.png",
     darkImage: "/images/wezdark.png",
-    url: "https://github.com/paugarcia32/dotfiles/wezterm",
+    url: "https://github.com/paugarcia32/.dotfiles/blob/master/.wezterm.lua",
   },
   {
     name: "Neovim Config",
     lightImage: "/images/introNvimlight.png",
     darkImage: "/images/introNvimdark.png",
-    url: "https://github.com/paugarcia32/dotfiles/neovim",
+    url: "https://github.com/paugarcia32/nvim/tree/f0e50cef7856b996bc381149a09ef60b9bc6efe0",
   },
   {
     name: "VSCode Config",
@@ -34,7 +34,7 @@ const dotfiles = [
     name: "Firefox Config",
     lightImage: "/images/firefoxlight.png",
     darkImage: "/images/firefoxdark.png",
-    url: "https://github.com/paugarcia32/dotfiles/firefox",
+    url: "https://github.com/paugarcia32/Firefox-Custom-Config/tree/9690a5c299a2d9598ddebe86523dc8e833de24ff",
   },
 ];
 
