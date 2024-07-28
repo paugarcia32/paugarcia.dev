@@ -73,7 +73,7 @@ npm run build
 
 
 ## 🔗 Links
-[![blog](https://img.shields.io/badge/my_paugarcia.dev-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://www.paugarcia.dev/)
+[![blog](https://img.shields.io/badge/my_website-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://www.paugarcia.dev/)
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/paugarcia32/)
 
 
