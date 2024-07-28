@@ -11,10 +11,10 @@
 
 ![Nextjs Badge](https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white&style=flat)
 [![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fpheralb%2Fpheralb.dev%2Fbadge%3Fref%3Dmain&style=flat)](https://actions-badge.atrox.dev/pheralb/pheralb.dev/goto?ref=main)
-![GitHub stars](https://img.shields.io/github/stars/paugarcia32/portfolio)
-![GitHub issues](https://img.shields.io/github/issues/paugarcia32/portfolio)
-![GitHub forks](https://img.shields.io/github/forks/paugarcia32/portfolio)
-![GitHub PRs](https://img.shields.io/github/issues-pr/paugarcia32/portfolio)
+![GitHub stars](https://img.shields.io/github/stars/paugarcia32/paugarcia.dev)
+![GitHub issues](https://img.shields.io/github/issues/paugarcia32/paugarcia.dev)
+![GitHub forks](https://img.shields.io/github/forks/paugarcia32/paugarcia.dev)
+![GitHub PRs](https://img.shields.io/github/issues-pr/paugarcia32/paugarcia.dev)
 ![Tailwind CSS Badge](https://img.shields.io/badge/Tailwind%20CSS-06B6D4?logo=tailwindcss&logoColor=fff&style=flat)
 
 </div>
@@ -39,7 +39,7 @@
 1. Download project
    
 ```bash
-git clone https://github.com/paugarcia32/portfolio.git
+git clone https://github.com/paugarcia32/paugarcia.dev.git
 ```
 
 2. Install dependencies
@@ -73,7 +73,7 @@ npm run build
 
 
 ## 🔗 Links
-[![blog](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://www.paugarcia.dev/)
+[![blog](https://img.shields.io/badge/my_paugarcia.dev-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://www.paugarcia.dev/)
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/paugarcia32/)
 
 
